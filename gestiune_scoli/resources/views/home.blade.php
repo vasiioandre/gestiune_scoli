@@ -16,15 +16,12 @@
                     </button>
                 </div>
 
-                <button type="button" class="btn btn-secondary" onclick="window.location='{{ url("/") }}'">Mergi la scoala selectata</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location='{{ url('info_generale') }}'">Mergi la scoala selectata</button>
 
                 <div class="my-md-5 mx-md-3">
                     <button type="button" class="btn btn-primary btn-lg">Adauga scoala</button>
                 </div>
             </div>
-
     </div>
-
-
 
 @stop

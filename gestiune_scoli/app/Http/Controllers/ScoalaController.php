@@ -18,4 +18,9 @@ class ScoalaController extends Controller
     {
         return view('home');
     }
+
+    public function info()
+    {
+        return view('info_generale');
+    }
 }

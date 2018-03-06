@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>Template</title>
 
+    <link rel="stylesheet" href="{{ url('font-awesome/css/font-awesome.css') }}">
     <!-- <base href="{{ URL::asset('/') }}" target="_blank">-->
     <link href="{{ url('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ url('css/style.css') }}" rel="stylesheet">
+   <!-- <link href="{{ url('css/feather.css') }}" rel="stylesheet">-->
 
     <script src="{{ url('js/jquery-3.3.1.js') }}"></script>
 </head>
@@ -50,6 +52,7 @@
     </div>
 
     <script src="{{ url('js/bootstrap.min.js') }}"></script>
+    <!--<script src="{{ url('js/feather.js') }}"></script>-->
 </body>
 
 </html>
