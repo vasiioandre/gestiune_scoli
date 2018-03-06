@@ -19,4 +19,6 @@ Route::get('intro', function(){
    return 'ana';
 });
 
-Route::get('test', 'ScoalaController@index');
+Route::get('test', 'ScoalaController@test');
+
+Route::get('home', 'ScoalaController@index');

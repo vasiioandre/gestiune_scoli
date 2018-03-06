@@ -14,6 +14,7 @@ class CreateScoliTable extends Migration
     public function up()
     {
         Schema::create('scoli', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id_scoala');
             $table->string('nume')->nullable(false);
             $table->string('nr_cf')->nullable(false);

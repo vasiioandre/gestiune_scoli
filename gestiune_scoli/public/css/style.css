@@ -1,0 +1,25 @@
+body {
+    background-color: #1d2b53;
+}
+
+h1, h5 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+.btn-primary {
+    background-color: #17b794;
+    border-color: #17b794;
+}
+
+.btn-secondary {
+    background-color: #1d2b53;
+    border-color: white;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}

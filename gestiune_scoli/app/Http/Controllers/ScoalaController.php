@@ -7,10 +7,15 @@ use Illuminate\Http\Request;
 
 class ScoalaController extends Controller
 {
-    public function index()
+    public function test()
     {
         $scoli = Scoala::all();
 
         return $scoli;
+    }
+
+    public function index()
+    {
+        return view('home');
     }
 }
