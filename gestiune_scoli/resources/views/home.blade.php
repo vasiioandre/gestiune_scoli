@@ -11,10 +11,26 @@
                 <h5 class="mt-0">Selecteaza o scoala:</h5>
 
                 <div class="dropdown m-md-5">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownSchoolButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        ...
-                    </button>
+                    <select>
+                        @foreach($school_names as $school_name)
+                            <option value="{{$school_name->id_scoala}}">{{$school_name->nume}}</option>
+                        @endforeach
+                    </select>
                 </div>
+
+
+
+
+
+
+                {{--<div class="form-group">--}}
+                    {{--{!! Form::Label('item', 'Item:') !!}--}}
+                    {{--<select class="form-control" name="item_id">--}}
+                        {{--@foreach($items as $item)--}}
+                            {{--<option value="{{$item->item_id}}">{{$item->id}}</option>--}}
+                        {{--@endforeach--}}
+                    {{--</select>--}}
+                {{--</div>--}}
 
                 <button type="button" class="btn btn-secondary" onclick="window.location='{{ url('info_generale') }}'">Mergi la scoala selectata</button>
 

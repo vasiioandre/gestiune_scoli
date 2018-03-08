@@ -16,7 +16,9 @@ class ScoalaController extends Controller
 
     public function index()
     {
-        return view('home');
+        $school_names = Scoala::all( 'nume', 'id_scoala');
+
+        return view('home', compact('school_names'));
     }
 
     public function info()
