@@ -15,13 +15,16 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">Selectare scoala</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav float-md-right ml-auto">
+    <nav class="navbar navbar-expand-md navbar-dark mb-md-5">
+        <div class="mr-auto order-0">
+            <a class="navbar-brand" href="#">Selectare scoala</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse w-100 order-1 mx-auto" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Informatii generale <span class="sr-only">(current)</span></a>
                 </li>
@@ -42,8 +45,14 @@
                 </li>
             </ul>
         </div>
-    </nav>
 
+        <div class="mx-auto order-2">
+            <a class="navbar-brand mx-auto" href="#">Log out</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
 
 
 
