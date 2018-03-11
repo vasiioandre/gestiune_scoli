@@ -17,7 +17,7 @@ p {
 
 .btn-secondary {
     background-color: #1d2b53;
-    border-color: white;
+    border: 2px solid white;
 }
 
 .contact{

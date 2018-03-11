@@ -21,6 +21,6 @@ Route::get('intro', function(){
 
 Route::get('test', 'ScoalaController@test');
 
-Route::get('home', 'ScoalaController@index');
+Route::get('home', 'HomeController@index');
 
-Route::get('info_generale', 'ScoalaController@info');
+Route::post('info_generale', 'ScoalaController@info_generale');

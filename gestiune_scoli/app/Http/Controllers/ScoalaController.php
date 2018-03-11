@@ -3,26 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Scoala;
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+use Request;
 
 class ScoalaController extends Controller
 {
-    public function test()
+    public function info_generale()
     {
-        $scoli = Scoala::all();
+        $input = Request::all();
+        $id = Request::get('selected_school');
 
-        return $scoli;
-    }
+        $scoala = Scoala::where('id_scoala', $id)->get();
 
-    public function index()
-    {
-        $school_names = Scoala::all( 'nume', 'id_scoala');
-
-        return view('home', compact('school_names'));
-    }
-
-    public function info()
-    {
-        return view('info_generale');
+        return $scoala;
     }
 }
