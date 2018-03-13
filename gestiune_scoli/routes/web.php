@@ -24,3 +24,4 @@ Route::get('test', 'ScoalaController@test');
 Route::get('home', 'HomeController@index');
 
 Route::post('info_generale', 'ScoalaController@info_generale');
+

@@ -10,11 +10,12 @@ class ScoalaController extends Controller
 {
     public function info_generale()
     {
-        $input = Request::all();
+        //$input = Request::all();
         $id = Request::get('selected_school');
 
         $scoala = Scoala::where('id_scoala', $id)->get();
 
-        return $scoala;
+        return view('info_generale')->with("scoala", $scoala);
+        //return $scoala;
     }
 }

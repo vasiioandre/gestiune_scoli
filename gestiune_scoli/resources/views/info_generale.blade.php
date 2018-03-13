@@ -2,30 +2,46 @@
 
 @section('content')
 
-    <h1>Istoric</h1>
+    @foreach($scoala as $school)
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <img class="align-self-center mr-5 img-fluid img-thumbnail" src="{{ URL::to('img/' . $school->imagine) }}">
+            </div>
 
-   <nav class="gtco-nav" role="navigation">
-        <div class="gtco-container">
-            <div class="row">
-                <div class="col-md-12 text-right">
-                    <ul class="navbar-nav float-md-right ml-auto">
-                        <li class="contact"><a class="contact" href="#"><i class="fa fa-2x fa-phone contact"></i> +1 (0)123 456 7890 </a></li>
-                        <li class="contact"><a href="#"><i class="fa fa-2x fa-envelope-square contact"></i></a></li>
-                        <li class="contact"><a href="#"><i class="fa fa-2x fa-facebook-official contact"></i> </a></li>
-                    </ul>
-                </div>
+            <div class="col-6" align="center">
+                <h2 class="row my-md-5 mx-md-3"> {{ $school->nume }}</h2>
+                <p>{{ $school->istoric }}</p>
             </div>
         </div>
-    </nav>
+    </div>
+
+    <div class="container">
+        <div class="row my-md-5 mx-md-3">
+            <div class="col-6">
+                <h5 class="contact">Adresa:</h5>
+                <p class="contact"> {{ $school->adresa }}</p>
+            </div>
+
+            <div class="col-6">
+                <h5 class="contact">Contact:</h5>
+                <nav class="gtco-nav" role="navigation" align="left">
+                    <div class="gtco-container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="navbar-nav">
+                                    <li class="contact"><a class="contact" href="#"><i class="fa fa-1x fa-phone contact"></i> {{ $school->telefon }} </a></li>
+                                    <li class="contact"><a href="#"><i class="fa fa-1x fa-envelope-square contact"> {{ $school->email }}</i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
 
 
-
-   <div>
-       <img src="">
-   </div>
-
-    <script>
-        feather.replace()
-    </script>
+    @endforeach
 
 @stop

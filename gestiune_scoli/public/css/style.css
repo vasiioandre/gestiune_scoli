@@ -2,7 +2,7 @@ body {
     background-color: #1d2b53;
 }
 
-h1, h5 {
+h1, h2, h5 {
     color: white;
 }
 
@@ -22,4 +22,14 @@ p {
 
 .contact{
     color: #17b794;
+}
+
+#map {
+    height: 500px;
+    width: 80%;
+}
+
+.img-thumbnail{
+    max-height: 300px;
+    align: center;
 }
