@@ -8,14 +8,15 @@ use Request;
 
 class ScoalaController extends Controller
 {
-    public function info_generale()
+    public function istoric()
     {
         //$input = Request::all();
-        $id = Request::get('selected_school');
+       // $id = Request::get('selected_school');
 
-        $scoala = Scoala::where('id_scoala', $id)->get();
+       // $scoala = Scoala::where('id_scoala', $id)->get();
 
-        return view('info_generale')->with("scoala", $scoala);
-        //return $scoala;
+        //return view('istoric')->with("scoala", $scoala);
+        return view('istoric');
     }
+
 }

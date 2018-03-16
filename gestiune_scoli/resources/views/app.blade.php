@@ -3,66 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestiune Scoli</title>
+    <meta name="description" content="">
 
-    <link rel="stylesheet" href="{{ url('font-awesome/css/font-awesome.css') }}">
-    <!-- <base href="{{ URL::asset('/') }}" target="_blank">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link href="{{ url('css/bootstrap.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url('font-awesome/css/font-awesome.css') }}">
     <link href="{{ url('css/style.css') }}" rel="stylesheet">
-   <!-- <link href="{{ url('css/feather.css') }}" rel="stylesheet">-->
+    <link href="{{ url('css/isotope.css') }}" rel="stylesheet" media="screen">
+    <link href="{{ url('css/bootstrap-theme.css') }}" rel="stylesheet">
+    <link href="{{ url('skin/default.css') }}" rel="stylesheet">
 
-    <script src="{{ url('js/jquery-3.3.1.js') }}"></script>
+    <link href="{{ url('css/styleSideBar.css') }}" rel="stylesheet">
+
+    {{--<script src="{{ url('js/jquery-3.3.1.js') }}"></script>--}}
+    <script src="{{ url('js/fancybox/jquery.fancybox.css') }}" type="text/css" media="screen"></script>
 </head>
 
 <body>
 
-    @section('menu')
-        <nav class="navbar navbar-expand-md navbar-dark mb-md-5">
-            <div class="mr-auto order-0">
-                <a class="navbar-brand" href="#">Selectare scoala</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
+    @section('with_menu')
+        <div class="wrapper">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>MENIU</h3>
+                    <strong>BS</strong>
+                </div>
 
-            <div class="navbar-collapse collapse w-100 order-1 mx-auto" id="navbarNavDropdown">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Informatii generale <span class="sr-only">(current)</span></a>
+                <ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-send"></i>
+                            Istoric
+                        </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                    <li>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-home"></i>
                             Informatii patrimoniale
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Cladiri arondate</a>
-                            <a class="dropdown-item" href="#">Reparatii</a>
-                            <a class="dropdown-item" href="#">Investitii</a>
-                            <a class="dropdown-item" href="#">Avarii</a>
-                            <a class="dropdown-item" href="#">Utilitati</a>
-                        </div>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="#">Cladiri arondate</a></li>
+                            <li><a href="#">Reparatii</a></li>
+                            <li><a href="#">Investitii</a></li>
+                            <li><a href="#">Avarii</a></li>
+                            <li><a href="#">Utilitati</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Organizare interna</a>
+
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                            Organizare interna
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-link"></i>
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-duplicate"></i>
+                            Adaugare scoala
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-duplicate"></i>
+                            Modificare date
+                        </a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="#">Page 1</a></li>
+                            <li><a href="#">Page 2</a></li>
+                            <li><a href="#">Page 3</a></li>
+                        </ul>
                     </li>
                 </ul>
-            </div>
 
-            <div class="mx-auto order-2">
-                <a class="navbar-brand mx-auto" href="#">Log out</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </nav>
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="#" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-duplicate"></i>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+
+            @yield('content')
+
+        </div>
+
     @show
 
 
-    <div class="container">
-        @yield('content')
-    </div>
+    {{--<div class="container">--}}
+        @yield('without_menu')
+    {{--</div>--}}
 
+    <script src="{{ url('js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+    <script src="{{ url('js/jquery.js') }}"></script>
+    <script src="{{ url('js/jquery.easing.1.3.js') }}"></script>
     <script src="{{ url('js/bootstrap.min.js') }}"></script>
-    <!--<script src="{{ url('js/feather.js') }}"></script>-->
+    <script src="{{ url('js/jquery.isotope.min.js') }}"></script>
+    <script src="{{ url('js/jquery.nicescroll.min.js') }}"></script>
+    <script src="{{ url('js/fancybox/jquery.fancybox.pack.js') }}"></script>
+    <script src="{{ url('js/skrollr.min.js') }}"></script>
+    <script src="{{ url('js/jquery.scrollTo.js') }}"></script>
+    <script src="{{ url('js/jquery.localScroll.js') }}"></script>
+    <script src="{{ url('js/stellar.js') }}"></script>
+    <script src="{{ url('js/jquery.appear.js') }}"></script>
+    <script src="{{ url('js/main.js') }}"></script>
+
 </body>
 
 </html>

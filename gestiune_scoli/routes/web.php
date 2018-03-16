@@ -23,5 +23,7 @@ Route::get('test', 'ScoalaController@test');
 
 Route::get('home', 'HomeController@index');
 
-Route::post('info_generale', 'ScoalaController@info_generale');
+Route::get('istoric', 'ScoalaController@istoric');
+//Route::post('info_generale', 'ScoalaController@info_generale');
+
 

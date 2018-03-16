@@ -18,6 +18,8 @@ class HomeController extends Controller
             $school_name_selected[$school_name->id_scoala] = $school_name->nume;
         }
 
+
+
         return view('home')->with("school_names", $school_name_selected);
     }
 }
