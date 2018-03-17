@@ -26,4 +26,6 @@ Route::get('home', 'HomeController@index');
 Route::get('istoric', 'ScoalaController@istoric');
 //Route::post('info_generale', 'ScoalaController@info_generale');
 
+Route::get('login', 'HomeController@login');
+
 

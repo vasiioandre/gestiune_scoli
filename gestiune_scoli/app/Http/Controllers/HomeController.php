@@ -22,4 +22,9 @@ class HomeController extends Controller
 
         return view('home')->with("school_names", $school_name_selected);
     }
+
+    public function login()
+    {
+        return view('login');
+    }
 }

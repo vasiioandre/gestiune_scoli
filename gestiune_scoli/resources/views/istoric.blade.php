@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('content')
+@section('content_user')
 
     <section id="about">
         <div class="container">
@@ -25,8 +25,12 @@
         </div>
     </section><!-- #about -->
 
-
 @stop
+
+
+@section('login_menu')
+@endsection
+
 
 
 {{--<!--@foreach($scoala as $school)-->--}}

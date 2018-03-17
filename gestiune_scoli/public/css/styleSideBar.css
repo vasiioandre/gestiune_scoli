@@ -3,7 +3,6 @@
 */
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
-
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
@@ -52,7 +51,7 @@ i, span {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #345652;
+    background: #70b9b0;
     color: #fff;
     transition: all 0.3s;
 }
@@ -103,7 +102,7 @@ i, span {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #70b9b0;
+    background: #4e8178;
 }
 
 #sidebar .sidebar-header strong {
@@ -118,11 +117,11 @@ i, span {
 
 #sidebar ul li a {
     padding: 10px;
-    font-size: 1.1em;
+    font-size: 0.9em;
     display: block;
 }
 #sidebar ul li a:hover {
-    color: #345652;
+    color: #70b9b0;
     background: #fff;
 }
 #sidebar ul li a i {
@@ -131,7 +130,7 @@ i, span {
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #70b9b0;
+    background: #4e8178;
 }
 
 
@@ -140,22 +139,22 @@ a[data-toggle="collapse"] {
 }
 
 a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
-    content: '\e259';
+    content: "\f0d7";
     display: block;
     position: absolute;
     right: 20px;
-    font-family: 'Glyphicons Halflings';
-    font-size: 0.6em;
+    font-family: 'FontAwesome';
+    font-size: 0.9em;
 }
 a[aria-expanded="true"]::before {
-    content: '\e260';
+    content: '\f0ab';
 }
 
 
 ul ul a {
-    font-size: 0.9em !important;
+    font-size: 0.7em !important;
     padding-left: 30px !important;
-    background: #70b9b0;
+    background: #4e8178;
 }
 
 ul.CTAs {
@@ -172,11 +171,11 @@ ul.CTAs a {
 
 a.download {
     background: #fff;
-    color: #345652;
+    color: #70b9b0;
 }
 
 a.article, a.article:hover {
-    background: #70b9b0 !important;
+    background: #4e8178 !important;
     color: #fff !important;
 }
 
@@ -200,8 +199,8 @@ a.article, a.article:hover {
         min-width: 80px;
         max-width: 80px;
         text-align: center;
-        margin-left: -80px !important ;
     }
+
     a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
         top: auto;
         bottom: 5px;
@@ -210,8 +209,10 @@ a.article, a.article:hover {
         -ms-transform: translateX(50%);
         transform: translateX(50%);
     }
-    #sidebar.active {
-        margin-left: 0 !important;
+
+    #sidebar .sidebar-header strong {
+        display: none;
+        font-size: 1.0em;
     }
 
     #sidebar .sidebar-header h3, #sidebar .CTAs {
@@ -224,6 +225,7 @@ a.article, a.article:hover {
 
     #sidebar ul li a {
         padding: 20px 10px;
+        font-size: 0.7em;
     }
 
     #sidebar ul li a span {
