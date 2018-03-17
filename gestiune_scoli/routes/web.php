@@ -11,21 +11,16 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('intro', function(){
-   return 'ana';
-});
-
-Route::get('test', 'ScoalaController@test');
-
 Route::get('home', 'HomeController@index');
+Route::get('logout', 'HomeController@Logout');
 
 Route::get('istoric', 'ScoalaController@istoric');
-//Route::post('info_generale', 'ScoalaController@info_generale');
+Route::post('istoric', 'ScoalaController@istoric');
 
-Route::get('login', 'HomeController@login');
-
-
+Route::get('reparatii', 'PrimarieController@reparatii');

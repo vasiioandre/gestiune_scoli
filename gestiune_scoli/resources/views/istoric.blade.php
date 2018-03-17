@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('content_user')
+@section('content')
 
     <section id="about">
         <div class="container">
@@ -23,7 +23,7 @@
             </div>
 
         </div>
-    </section><!-- #about -->
+    </section>
 
 @stop
 
