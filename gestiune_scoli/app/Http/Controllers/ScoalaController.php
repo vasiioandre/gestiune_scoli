@@ -11,12 +11,12 @@ class ScoalaController extends Controller
     public function istoric()
     {
         //$input = Request::all();
-       // $id = Request::get('selected_school');
+        $id = Request::get('selected_school');
 
-       // $scoala = Scoala::where('id_scoala', $id)->get();
+        $scoala = Scoala::where('id_scoala', $id)->get();
 
-        //return view('istoric')->with("scoala", $scoala);
-        return view('istoric');
+        return view('istoric')->with("scoala", $scoala);
+        //return view('istoric');
     }
 
 }

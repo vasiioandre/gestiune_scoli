@@ -16,8 +16,18 @@ class PrimarieController extends Controller
         return "Index Page";
     }
 
+    public function cladiri_arondate()
+    {
+        return view('cladiri_arondate');
+    }
+
     public function reparatii()
     {
         return view('reparatii');
+    }
+
+    public function adaugare_scoala()
+    {
+        return view('adaugare_scoala');
     }
 }

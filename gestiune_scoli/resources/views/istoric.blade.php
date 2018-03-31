@@ -2,73 +2,46 @@
 
 @section('content')
 
-    <section id="about">
+    @foreach($scoala as $school)
+    <div id="about">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 about-img">
-                    <img src="img/loga.jpg" alt="">
+                <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 ">
+                    <div class="about-heading">
+                        <h1>{{ $school->nume }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--about wrapper left-->
+        <div class="container">
+
+            <div class="row">
+                <div class="col-xs-12 hidden-sm col-md-5">
+                    <div class="about-left">
+                        <img src="{{ URL::to('img/' . $school->imagine) }}" alt="">
+                    </div>
                 </div>
 
-                <div class="col-lg-6 content">
-                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
-                    <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
-
-                    <ul>
-                        <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="ion-android-checkmark-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                        <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                    </ul>
-
+                <!--about wrapper right-->
+                <div class="col-xs-12 col-md-7">
+                    <div class="about-right">
+                            <div class="about-right-wrapper">
+                                <p>{{ $school->istoric }}</p>
+                            </div>
+                    </div>
                 </div>
             </div>
 
         </div>
-    </section>
+    </div>
+
+    @endforeach
+
 
 @stop
 
 
 @section('login_menu')
 @endsection
-
-
-
-{{--<!--@foreach($scoala as $school)-->--}}
-{{--<!--<div class="container">-->--}}
-{{--<!--    <div class="row">-->--}}
-{{--<!--        <div class="col-6">-->--}}
-{{--<!--            <img class="align-self-center mr-5 img-fluid img-thumbnail" src="{{ URL::to('img/' . $school->imagine) }}">-->--}}
-{{--<!--        </div>-->--}}
-{{--<!---->--}}
-{{--<!--        <div class="col-6" align="center">-->--}}
-{{--<!--            <h2 class="row my-md-5 mx-md-3"> {{ $school->nume }}</h2>-->--}}
-{{--<!--            <p>{{ $school->istoric }}</p>-->--}}
-{{--<!--        </div>-->--}}
-{{--<!--    </div>-->--}}
-{{--<!--</div>-->--}}
-{{--<!---->--}}
-{{--<!--<div class="container">-->--}}
-{{--<!--    <div class="row my-md-5 mx-md-3">-->--}}
-{{--<!--        <div class="col-6">-->--}}
-{{--<!--            <h5 class="contact">Adresa:</h5>-->--}}
-{{--<!--            <p class="contact"> {{ $school->adresa }}</p>-->--}}
-{{--<!--        </div>-->--}}
-{{--<!---->--}}
-{{--<!--        <div class="col-6">-->--}}
-{{--<!--            <h5 class="contact">Contact:</h5>-->--}}
-{{--<!--            <nav class="gtco-nav" role="navigation" align="left">-->--}}
-{{--<!--                <div class="gtco-container">-->--}}
-{{--<!--                    <div class="row">-->--}}
-{{--<!--                        <div class="col-md-12">-->--}}
-{{--<!--                            <ul class="navbar-nav">-->--}}
-{{--<!--                                <li class="contact"><a class="contact" href="#"><i class="fa fa-1x fa-phone contact"></i> {{ $school->telefon }} </a></li>-->--}}
-{{--<!--                                <li class="contact"><a href="#"><i class="fa fa-1x fa-envelope-square contact"> {{ $school->email }}</i></a></li>-->--}}
-{{--<!--                            </ul>-->--}}
-{{--<!--                        </div>-->--}}
-{{--<!--                    </div>-->--}}
-{{--<!--                </div>-->--}}
-{{--<!--            </nav>-->--}}
-{{--<!--        </div>-->--}}
-{{--<!--    </div>-->--}}
-{{--<!--</div>-->--}}
-{{--<!--@endforeach-->--}}

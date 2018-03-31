@@ -2,25 +2,71 @@
 
 @section('content')
 
-    <section id="about">
+    <section id="services">
         <div class="container">
+            <div class="container page-title">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 ">
+                        <div class="about-heading">
+                            <h1>Reparatii</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
-                <h1>PAgina de reparatii</h1>
-                <div class="col-lg-6 about-img">
-                    <img src="img/moisil.jpg" alt="">
+                <div class="col-lg-9">
+                    <div class="box">
+                        <div class="row">
+                            <div class="col-lg-1 icon">
+                                <i class="fa fa-check-square-o"></i>
+                            </div>
+
+                            <div  class="col-lg-11">
+                                <div class="row" >
+                                    <div class="col-lg-4 reparatii">
+                                        <p>Anul finalizarii:</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>2018</p>
+                                    </div>
+                                </div>
+
+                                <div class="row" >
+                                    <div class="col-lg-4 reparatii">
+                                        <p>Detalii:</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>S-au facut reparatii la toata infrastructura scolii.</p>
+                                    </div>
+                                </div>
+
+                                <div class="row" >
+                                    <div class="col-lg-4 reparatii">
+                                        <p>Firma contractata:</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>Construct SRL</p>
+                                    </div>
+                                </div>
+
+                                <div class="row" >
+                                    <div class="col-lg-4 reparatii">
+                                        <p>Suma investita</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>1000 lei</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="col-lg-6 content">
-                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
-                    <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+            <div class="col-lg-9">
 
-                    <ul>
-                        <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="ion-android-checkmark-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                        <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                    </ul>
-
-                </div>
             </div>
 
         </div>

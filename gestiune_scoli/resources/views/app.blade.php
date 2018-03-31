@@ -36,7 +36,7 @@
 
                     <ul class="list-unstyled components">
                         <li class="active">
-                            <a href="#">
+                            <a href="{{ url('istoric') }}">
                                 <i class="fa fa-1x fa-home"></i>
                                 Istoric
                             </a>
@@ -48,8 +48,8 @@
                                 Informatii patrimoniale
                             </a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li><a href="#">Cladiri arondate</a></li>
-                                <li><a href="#">Reparatii</a></li>
+                                <li><a href="{{ url('cladiri_arondate') }}">Cladiri arondate</a></li>
+                                <li><a href="{{ url('reparatii') }}">Reparatii</a></li>
                                 <li><a href="#">Investitii</a></li>
                                 <li><a href="#">Avarii</a></li>
                                 <li><a href="#">Utilitati</a></li>
@@ -74,7 +74,7 @@
 
                     <ul class="list-unstyled components">
                         <li>
-                            <a href="#">
+                            <a href="{{ url('adaugare_scoala') }}">
                                 <i class="fa fa-1x fa-plus"></i>
                                 Adaugare scoala
                             </a>

@@ -23,4 +23,8 @@ Route::get('logout', 'HomeController@Logout');
 Route::get('istoric', 'ScoalaController@istoric');
 Route::post('istoric', 'ScoalaController@istoric');
 
+Route::get('cladiri_arondate', 'PrimarieController@cladiri_arondate');
 Route::get('reparatii', 'PrimarieController@reparatii');
+
+Route::get('adaugare_scoala', 'PrimarieController@adaugare_scoala');
+

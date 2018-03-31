@@ -1124,6 +1124,116 @@ h1{
 	color: #70b9b0;
 }
 
-btn-primary{
-    color: red;
+.page-title{
+	padding: 50px;
 }
+
+
+/*Istoric*/
+#about {
+	padding: 50px;
+}
+
+#about .about-heading {
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+#about img {
+	width: 400px; /* You can set the dimensions to whatever you want */
+	height: 500px;
+	object-fit: cover;
+}
+
+#about .about-left {
+	position: relative;
+	z-index: 2;
+	padding: 30px;
+}
+
+#about .about-right:before {
+	content: "";
+	border: 8px solid #e5eef0;
+	width: 120%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#about .about-right {
+	position: relative;
+	padding: 10px 80px 150px 80px;
+}
+
+#about .about-right-wrapper {
+	padding-left: 0 0 50px 78px;
+	position: relative;
+	left: 0;
+	top: 75px;
+}
+
+#about .about-right-wrapper p {
+	line-height: 28px;
+	margin-top: 20px;
+	color: #8e8e8e ;
+}
+
+
+/*Cladiri arondate*/
+#cladiri_arondate img {
+	width: 150px;
+	height: 100px;
+	object-fit: cover;
+}
+
+#cladiri_arondate h3 {
+	color: #70b9b0;
+}
+
+
+/*Reparatii*/
+
+#services .box {
+	padding: 40px;
+	margin-bottom: 40px;
+	box-shadow: 10px 10px 15px rgba(73, 78, 92, 0.1);
+	background: #fff;
+	transition: 0.4s;
+}
+
+#services .box .icon {
+	float: left;
+}
+
+#services .box .icon i {
+	color: #444;
+	font-size: 64px;
+	transition: 0.5s;
+	line-height: 0;
+	margin-top: 34px;
+}
+
+#services .box .icon i:before {
+	background: #0c2e8a;
+	background: linear-gradient(45deg, #50d8af 0%, #a3ebd5 100%);
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#services .box p {
+	font-size: 14px;
+	margin-left: 20px;
+	margin-bottom: 0;
+	line-height: 24px;
+}
+
+.reparatii{
+	font-weight: bold;
+}
+
+
+
+
+
