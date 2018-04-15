@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PrimarieController extends Controller
 {
@@ -29,5 +31,13 @@ class PrimarieController extends Controller
     public function adaugare_scoala()
     {
         return view('adaugare_scoala');
+    }
+
+    public function test()
+    {
+        //$id = Auth::user();
+
+        $id = Session::get('variableName');
+        return $id;
     }
 }

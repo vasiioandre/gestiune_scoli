@@ -64,7 +64,7 @@
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a href="{{ url('contact') }}">
                                 <i class="fa fa-1x fa-phone contact"></i>
                                 Contact
                             </a>
@@ -100,7 +100,7 @@
 
                     <ul class="list-unstyled components">
                         <li>
-                            <a href="#">
+                            <a href="{{ url('home') }}">
                                 <i class="fa fa-1x fa-building"></i>
                                 Selecteaza alta scoala
                             </a>

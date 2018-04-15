@@ -49,13 +49,18 @@
                                     <label for="tip_utilizator" class="col-md-4 col-form-label text-md-right">{{ __('Tip Utilizator') }}</label>
 
                                     <div class="col-md-6">
-                                        <input id="tip_utilizator" type="text" class="form-control{{ $errors->has('tip_utilizator') ? ' is-invalid' : '' }}" name="tip_utilizator" value="{{ old('tip_utilizator') }}" required autofocus>
 
-                                        @if ($errors->has('tip_utilizator'))
-                                            <span class="invalid-feedback">
-                                                <strong>{{ $errors->first('tip_utilizator') }}</strong>
-                                            </span>
-                                        @endif
+                                        <div class="form-group">
+                                            {!! Form::select('tip_utilizator', array('primarie'=>'Primarie', 'scoala'=>'Scoala'), 'elev', array('class'=>"form-control{{ $errors->has('tip_utilizator') ? ' is-invalid' : '' }}")) !!}
+                                        </div>
+
+                                        {{--<input id="tip_utilizator" type="text" class="form-control{{ $errors->has('tip_utilizator') ? ' is-invalid' : '' }}" name="tip_utilizator" value="{{ old('tip_utilizator') }}" required autofocus>--}}
+
+                                        {{--@if ($errors->has('tip_utilizator'))--}}
+                                            {{--<span class="invalid-feedback">--}}
+                                                {{--<strong>{{ $errors->first('tip_utilizator') }}</strong>--}}
+                                            {{--</span>--}}
+                                        {{--@endif--}}
                                     </div>
                                 </div>
 

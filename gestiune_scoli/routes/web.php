@@ -20,11 +20,15 @@ Route::get('/', function () {
 Route::get('home', 'HomeController@index');
 Route::get('logout', 'HomeController@Logout');
 
-Route::get('istoric', 'ScoalaController@istoric');
+Route::get('istoric', 'ScoalaController@istoric_get');
 Route::post('istoric', 'ScoalaController@istoric');
+
+Route::get('contact', 'ScoalaController@contact');
 
 Route::get('cladiri_arondate', 'PrimarieController@cladiri_arondate');
 Route::get('reparatii', 'PrimarieController@reparatii');
 
 Route::get('adaugare_scoala', 'PrimarieController@adaugare_scoala');
+
+Route::get('test', 'PrimarieController@test');
 
