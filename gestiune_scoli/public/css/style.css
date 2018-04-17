@@ -1238,11 +1238,28 @@ h1{
 	color: #70b9b0;
 }
 
+.contact-title{
+	padding: 30px;
+}
+
 @media (min-width: 768px) {
 	#contact .contact-address, #contact .contact-phone, #contact .contact-email {
-		padding: 20px 0;
+		padding: 10px 0;
+		text-align: center;
 	}
 }
+
+@media (min-width: 768px) {
+	#contact .contact-cf {
+		text-align: center;
+	}
+}
+
+#contact-map #map {
+	height: 500px;
+	width: 100%;
+}
+
 
 
 

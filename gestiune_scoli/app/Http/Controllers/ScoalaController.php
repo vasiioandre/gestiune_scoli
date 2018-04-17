@@ -25,13 +25,16 @@ class ScoalaController extends Controller
     public function istoric_get()
     {
         $id = Session::get('variableName');
-
         $scoala = Scoala::where('id_scoala', $id)->get();
+
         return view('istoric')->with("scoala", $scoala);
     }
 
     public function contact()
     {
-        return view('contact');
+        $id = Session::get('variableName');
+        $scoala = Scoala::where('id_scoala', $id)->get();
+
+        return view('contact')->with("scoala", $scoala);
     }
 }

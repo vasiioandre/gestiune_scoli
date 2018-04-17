@@ -20,10 +20,6 @@ class AddColumnInScoliTable extends Migration
         Schema::table('scoli', function (Blueprint $table) {
             $table->string('email')->nullable();
         });
-
-        Schema::table('scoli', function (Blueprint $table) {
-            $table->string('facebook')->nullable();
-        });
     }
 
     /**
@@ -39,10 +35,6 @@ class AddColumnInScoliTable extends Migration
 
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('email');
-        });
-
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('facebook');
         });
     }
 }
