@@ -26,8 +26,8 @@
 
     @section('user_menu')
 
-        <div class="wrapper">
-            @if (Auth::check())
+        @if (Auth::check())
+            <div class="wrapper fill">
                 <nav id="sidebar">
                     <div class="sidebar-header">
                         <h3>MENIU</h3>
@@ -115,12 +115,43 @@
                     </ul>
 
                 </nav>
-            @endif
-
 
                 @yield('content')
 
-        </div>
+            </div>
+
+            @else
+
+                <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:50px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="fa fa-bars color-white"></span>
+                            </button>
+                            <a class="navbar-brand" href="{{ url('home') }}" data-0="line-height:90px;" data-300="line-height:50px;">
+                                <img class="img-fluid" src="{{ URL::to('img/stema_pmt.jpg') }}">-->
+                            </a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+                                    <li class><a href="{{ url('contact') }}">Contact</a></li>
+                                    <li class><a href="{{ url('logout') }}">Logout</a></li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="featured">
+                </section>
+
+                @yield('content')
+
+            @endif
+
+
+
+
     @show
 
 
