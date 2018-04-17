@@ -1261,9 +1261,15 @@ h1{
 }
 
 
+/*Cladiri arondate*/
+#cladiri_arondate .row {
+	margin-bottom: 20px;
+}
 
-
-
+#cladiri_arondate .fa-home:before {
+	padding-left: 35px;
+	padding-right: 35px;
+}
 
 
 

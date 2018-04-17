@@ -20,6 +20,7 @@ class CreateCladiriArondateTable extends Migration
             $table->text('nume')->nullable('false');
             $table->text('adresa')->nullable('false');
             $table->text('nr_cf')->nullable('false');
+            $table->text('fotografie');
             $table->timestamps();
 
             $table->foreign('id_scoala')
