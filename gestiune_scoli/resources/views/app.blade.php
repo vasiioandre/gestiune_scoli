@@ -16,7 +16,7 @@
     <link href="{{ url('css/isotope.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url('css/bootstrap-theme.css') }}" rel="stylesheet">
     <link href="{{ url('skin/default.css') }}" rel="stylesheet">
-    <script src="{{ url('js/fancybox/jquery.fancybox.css') }}" type="text/css" media="screen"></script>
+    <link href="{{ url('js/fancybox/jquery.fancybox.css') }}" rel="stylesheet">
 
     <link href="{{ url('css/styleSideBar.css') }}" rel="stylesheet">
 

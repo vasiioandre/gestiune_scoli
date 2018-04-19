@@ -669,7 +669,7 @@ nav#filter a {
 }
 
 
-.portfolio-items article img {width:100%;} 
+.portfolio-items article img {width:100%;}
 
 .portfolio-item {
 	display: block;
@@ -1273,3 +1273,19 @@ h1{
 
 
 
+/*Reparatii*/
+#services .about-heading {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.modal.and.carousel {
+	position: fixed; // Needed because the carousel overrides the position property
+}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+	display: block;
+	width: 1000px;
+	height: auto;
+	line-height: 1;
+}

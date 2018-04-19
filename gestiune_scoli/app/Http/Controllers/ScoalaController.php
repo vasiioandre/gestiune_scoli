@@ -14,7 +14,7 @@ class ScoalaController extends Controller
         //$input = Request::all();
         $id = Request::get('selected_school');
 
-        Session::put('variableName', $id);
+        Session::put('selected_school', $id);
 
         $scoala = Scoala::where('id_scoala', $id)->get();
 
@@ -24,7 +24,7 @@ class ScoalaController extends Controller
 
     public function istoric_get()
     {
-        $id = Session::get('variableName');
+        $id = Session::get('selected_school');
         $scoala = Scoala::where('id_scoala', $id)->get();
 
         return view('istoric')->with("scoala", $scoala);
@@ -32,7 +32,7 @@ class ScoalaController extends Controller
 
     public function contact()
     {
-        $id = Session::get('variableName');
+        $id = Session::get('selected_school');
         $scoala = Scoala::where('id_scoala', $id)->get();
 
         return view('contact')->with("scoala", $scoala);
