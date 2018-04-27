@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\Mail;
+
 Auth::routes();
 
 Route::get('/', function () {
@@ -31,4 +33,11 @@ Route::get('reparatii', 'PrimarieController@reparatii');
 Route::get('adaugare_scoala', 'PrimarieController@adaugare_scoala');
 
 Route::get('test', 'PrimarieController@test');
+
+Route::get('email', function(){
+    Mail::send('emails', ['name' => 'Monica'], function($message)
+    {
+        $message->to('light.shot34@gmail.com', 'Ioana')->from('vasi.ioandre@gmail.com')->subject('Am trimis mail din Laravel! Mwuhaha');
+    });
+});
 

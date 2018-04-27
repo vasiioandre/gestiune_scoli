@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('vasi.ioandre@gmail.com', 'hello@example.com'),
+        'name' => env('Ioana', 'Example'),
     ],
 
     /*
@@ -100,6 +100,14 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
+
+    'stream' => [
+        'ssl' => [
+            'allow_self_signed' => true,
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
