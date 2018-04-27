@@ -7,8 +7,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-
     <link href="{{ url('css/bootstrap.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('font-awesome/css/font-awesome.css') }}">
     <link href="{{ url('css/style.css') }}" rel="stylesheet">
@@ -80,8 +78,8 @@
                             </a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <li><a href="{{ url('adaugare_scoala') }}">Scoala</a></li>
-                                <li><a href="#">Istoric</a></li>
-                                <li><a href="#">Cladiri arondate</a></li>
+                                <li><a href="{{ url('adaugare_istoric') }}">Istoric</a></li>
+                                <li><a href="{{ url('adaugare_cladire') }}">Cladiri arondate</a></li>
                                 <li><a href="#">Reparatii</a></li>
                                 <li><a href="#">Investitii</a></li>
                                 <li><a href="#">Avarii</a></li>

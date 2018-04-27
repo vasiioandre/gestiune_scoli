@@ -14,7 +14,6 @@
         </div>
 
 
-
         @foreach($cladiri as $cladire)
             <div class="row my-md-5 mx-md-3" id="cladiri_arondate">
                 <div class="col-md-2">

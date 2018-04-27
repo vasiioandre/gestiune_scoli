@@ -30,14 +30,25 @@ Route::get('contact', 'ScoalaController@contact');
 Route::get('cladiri_arondate', 'PrimarieController@cladiri_arondate');
 Route::get('reparatii', 'PrimarieController@reparatii');
 
-Route::get('adaugare_scoala', 'PrimarieController@adaugare_scoala');
+
+
+Route::get('adaugare_scoala', 'AdaugareDateController@adaugare_scoala');
+//Route::get('adaugare_istoric', 'PrimarieController@adaugare_istoric');
+//Route::post('store', 'PrimarieController@store');
+Route::get('adaugare_cladire', ['as'=>'adaugare_cladire','uses'=>'AdaugareDateController@adaugare_cladire']);
+Route::post('adaugare_cladire', ['as'=>'adaugare_cladire.post','uses'=> 'AdaugareDateController@adaugare_cladire_post']);
+
+Route::get('image-upload',['as'=>'image.upload','uses'=>'AdaugareDateController@imageUpload']);
+Route::post('image-upload',['as'=>'image.upload.post','uses'=>'AdaugareDateController@imageUploadPost']);
+
+
 
 Route::get('test', 'PrimarieController@test');
 
 Route::get('email', function(){
     Mail::send('emails', ['name' => 'Monica'], function($message)
     {
-        $message->to('light.shot34@gmail.com', 'Ioana')->from('vasi.ioandre@gmail.com')->subject('Am trimis mail din Laravel! Mwuhaha');
+        $message->to('madi.vasi@yahoo.com', 'Ioana')->from('vasi.ioandre@gmail.com')->subject('Mwuhaha!!');
     });
 });
 
