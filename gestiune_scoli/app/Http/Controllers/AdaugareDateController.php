@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 //use Illuminate\Http\Request;
+use App\Scoala;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Request;
@@ -53,20 +54,34 @@ class AdaugareDateController extends Controller
 
     public function adaugare_cladire()
     {
-        return view('adaugare_cladire');
+        $school_names = Scoala::all('nume', 'id_scoala');
+        $school_name_selected = array();
+        foreach ($school_names as $school_name) {
+            $school_name_selected[$school_name->id_scoala] = $school_name->nume;
+        }
+
+        return view('adaugare_cladire')->with("school_names", $school_name_selected);
+        //return view('adaugare_cladire');
     }
 
     public function adaugare_cladire_post()
     {
-        $imageName = time().'.'.request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('img'), $imageName);
+        if (request()->image)
+        {
+            $imageName = time().'.'.request()->image->getClientOriginalExtension();
+            request()->image->move(public_path('img'), $imageName);
+        }
+        else
+            $imageName = NULL;
 
         DB::table('cladiri_arondate')->insert([
-            'id_scoala' => Request::get('id_scoala'),
-            'nume' => $nume = Request::get('nume'),
-            'adresa'=> Request::get('adresa'),
+            'id_scoala' => Request::get('selected_school'),
+            'nume' => $nume = Request::get('name'),
+            'adresa'=> Request::get('address'),
             'nr_cf' => Request::get('nr_cf'),
-            'fotografie' => $imageName
+            'fotografie' => $imageName,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
         ]);
 
         return back()

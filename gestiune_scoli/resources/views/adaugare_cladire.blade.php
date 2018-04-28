@@ -36,18 +36,18 @@
                     @csrf
 
                     <div class="form-group row">
-                        <label for="nume" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Nume') }}</label>
+                        <label for="name" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Nume') }}</label>
 
                         <div class="col-md-4">
-                            <input id="nume" type="text" class="form-control" name="nume" required autofocus>
+                            <input id="name" type="text" class="form-control" name="name" required autofocus>
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="adresa" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Adresa') }}</label>
+                        <label for="address" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Adresa') }}</label>
 
                         <div class="col-md-4">
-                            <input id="adresa" type="text" class="form-control" name="adresa" required>
+                            <input id="address" type="text" class="form-control" name="address" required>
                         </div>
                     </div>
 
@@ -60,10 +60,10 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="id_scoala" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Scoala parinte') }}</label>
+                        <label for="id_scoala" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Scoala apartinatoare') }}</label>
 
                         <div class="col-md-4">
-                            <input id="id_scoala" type="text" class="form-control" name="id_scoala" required>
+                            {!! Form::select('selected_school', $school_names, null, [ 'class' =>  'form-control']) !!}
                         </div>
                     </div>
 
