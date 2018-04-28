@@ -14,7 +14,7 @@ class SchoolAddImageColumn extends Migration
     public function up()
     {
         Schema::table('scoli', function (Blueprint $table) {
-            $table->string('imagine')->nullable();
+            $table->string('fotografie')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class SchoolAddImageColumn extends Migration
     public function down()
     {
         Schema::table('scoli', function (Blueprint $table) {
-            $table->dropColumn('imagine');
+            $table->dropColumn('fotografie');
         });
     }
 }

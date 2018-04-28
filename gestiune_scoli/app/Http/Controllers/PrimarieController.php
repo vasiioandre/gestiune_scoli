@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cladiri_Arondate;
 use App\Reparatii;
+use Illuminate\Support\Facades\App;
 use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,13 +34,12 @@ class PrimarieController extends Controller
         $id = Session::get('selected_school');
         $reparatii = Reparatii::where('id_scoala', $id)->get();
 
+        //$locale = App::getLocale();
+
         return view('reparatii')->with("reparatii", $reparatii);
     }
 
-    public function adaugare_scoala()
-    {
-        return view('adaugare_scoala');
-    }
+
 
     public function test()
     {

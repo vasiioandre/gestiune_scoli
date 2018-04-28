@@ -33,13 +33,10 @@ Route::get('reparatii', 'PrimarieController@reparatii');
 
 
 Route::get('adaugare_scoala', 'AdaugareDateController@adaugare_scoala');
-//Route::get('adaugare_istoric', 'PrimarieController@adaugare_istoric');
-//Route::post('store', 'PrimarieController@store');
-Route::get('adaugare_cladire', ['as'=>'adaugare_cladire','uses'=>'AdaugareDateController@adaugare_cladire']);
-Route::post('adaugare_cladire', ['as'=>'adaugare_cladire.post','uses'=> 'AdaugareDateController@adaugare_cladire_post']);
+Route::post('adaugare_scoala', ['as'=>'adaugare_scoala.post','uses'=> 'AdaugareDateController@adaugare_scoala_post']);
 
-Route::get('image-upload',['as'=>'image.upload','uses'=>'AdaugareDateController@imageUpload']);
-Route::post('image-upload',['as'=>'image.upload.post','uses'=>'AdaugareDateController@imageUploadPost']);
+Route::get('adaugare_cladire', 'AdaugareDateController@adaugare_cladire');
+Route::post('adaugare_cladire', ['as'=>'adaugare_cladire.post','uses'=> 'AdaugareDateController@adaugare_cladire_post']);
 
 
 

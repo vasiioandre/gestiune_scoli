@@ -23,6 +23,7 @@ class CreateScoliTable extends Migration
             $table->string('longitudine');
             $table->string('latitudine');
             $table->text('istoric');
+            $table->timestamps();
         });
     }
 

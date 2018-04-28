@@ -20,36 +20,35 @@ class AdaugareDateController extends Controller
         return view('adaugare_scoala');
     }
 
+    public function adaugare_scoala_post()
+    {
+        if (request()->image)
+        {
+            $imageName = time().'.'.request()->image->getClientOriginalExtension();
+            request()->image->move(public_path('img'), $imageName);
+        }
+        else
+            $imageName = NULL;
+
+        DB::table('scoli')->insert([
+            'nume' => $nume = Request::get('name'),
+            'nr_cf' => Request::get('nr_cf'),
+            'adresa'=> Request::get('address'),
+            'telefon' => Request::get('phone'),
+            'email' => Request::get('phone'),
+            'istoric' => Request::get('phone'),
+            'fotografie' => $imageName,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        return back()
+            ->with('success','Ati adaugat cladirea cu succes.');
+    }
+
     public function adaugare_istoric()
     {
         return view('adaugare_istoric');
-    }
-
-    public function store(Request $request)
-    {
-        return $request->file('image');
-        $request->image->store('public');
-    }
-
-    public function imageUpload()
-    {
-        return view('adaugare_istoric');
-    }
-
-    public function imageUploadPost()
-    {
-        request()->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
-        $imageName = time().'.'.request()->image->getClientOriginalExtension();
-
-        request()->image->move(public_path('img'), $imageName);
-
-        return back()
-            ->with('success','Ati adaugat imaginea cu succes.')
-            ->with('image',$imageName);
-
     }
 
     public function adaugare_cladire()
@@ -61,7 +60,6 @@ class AdaugareDateController extends Controller
         }
 
         return view('adaugare_cladire')->with("school_names", $school_name_selected);
-        //return view('adaugare_cladire');
     }
 
     public function adaugare_cladire_post()
