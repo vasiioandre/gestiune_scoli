@@ -807,7 +807,7 @@ nav#filter a {
 	padding:0 10px;
 }
 #contact-form input[type=text]:focus,#contact-form input[type=email]:focus, .contactForm textarea:focus {
-	background: rgba(101, 106, 100, 1);
+	background: #4e8178;
 	color: #eff1ef;
 	box-shadow: none;
 	-moz-box-shadow: none;
@@ -817,8 +817,7 @@ nav#filter a {
 	-webkit-transition: background 0.25 ease-in;
 }
 #contact-form input[type=text],#contact-form input[type=email] {
-	height: 60px;
-	/*margin-bottom:30px;*/
+	height: 40px;
 }
 #contact-form input[type=submit] {
 	color: #fff;
@@ -1113,7 +1112,7 @@ Media queries
 	}
 }
 
-
+/*************************/
 
 #map {
 	height: 400px;
@@ -1126,6 +1125,11 @@ h1{
 
 .page-title{
 	padding: 50px;
+}
+
+/*Authentification*/
+.btn-link {
+	color: #70b9b0;
 }
 
 
@@ -1327,3 +1331,18 @@ h1{
 	height: auto;
 	line-height: 1;
 }
+
+
+/*Adaugare_scoala*/
+#adaugare_scoala .container{
+	margin-bottom: 100px;
+}
+
+
+/*Success Message*/
+.alert-success {
+	color: #4e8178;
+	background-color: #dff0d8;
+	border-color: #4e8178;
+}
+

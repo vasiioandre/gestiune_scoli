@@ -39,10 +39,10 @@
                                     </div>
                                 </div><!-- /.carousel-inner -->
                                 <a class="left carousel-control" href="#lightbox" role="button" data-slide="prev">
-                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                    <span class="fa fa-arrow-left"></span>
                                 </a>
                                 <a class="right carousel-control" href="#lightbox" role="button" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                    <span class="fa fa-arrow-right"></span>
                                 </a>
                             </div><!-- /.modal-body -->
                         </div><!-- /.modal-content -->

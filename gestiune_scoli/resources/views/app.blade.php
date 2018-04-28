@@ -73,7 +73,7 @@
                     <ul class="list-unstyled components">
                         <li>
                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-                                <i class="fa fa-1x fa-wrench"></i>
+                                <i class="fa fa-1x fa-plus"></i>
                                 Adaugare date
                             </a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -91,7 +91,7 @@
                         <li>
                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
                                 <i class="fa fa-1x fa-wrench"></i>
-                                Modificare date
+                                Editare date
                             </a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <li><a href="#">Scoala</a></li>

@@ -12,6 +12,7 @@ class Cladiri_Arondate extends Model
         'id_scoala',
         'nume',
         'adresa',
-        'nr_cf'
+        'nr_cf',
+        'fotografie'
     ];
 }
