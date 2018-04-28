@@ -51,7 +51,7 @@
                                     <div class="col-md-6">
 
                                         <div class="form-group">
-                                            {!! Form::select('tip_utilizator', array('primarie'=>'Primarie', 'scoala'=>'Scoala'), 'elev', array('class'=>"form-control{{ $errors->has('tip_utilizator') ? ' is-invalid' : '' }}")) !!}
+                                            {!! Form::select('tip_utilizator', array('primarie'=>'Primarie', 'scoala'=>'Scoala'), 'elev', array('class'=>"form-control")) !!}
                                         </div>
 
                                         {{--<input id="tip_utilizator" type="text" class="form-control{{ $errors->has('tip_utilizator') ? ' is-invalid' : '' }}" name="tip_utilizator" value="{{ old('tip_utilizator') }}" required autofocus>--}}
