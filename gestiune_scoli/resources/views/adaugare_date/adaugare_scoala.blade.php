@@ -38,7 +38,7 @@
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Nume') }}</label>
 
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <input id="name" type="text" class="form-control" name="name" required autofocus>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="form-group row">
                         <label for="nr_cf" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Nr. CF') }}</label>
 
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <input id="nr_cf" type="text" class="form-control" name="nr_cf" required>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                     <div class="form-group row">
                         <label for="address" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Adresa') }}</label>
 
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <input id="address" type="text" class="form-control" name="address" required>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                     <div class="form-group row">
                         <label for="phone" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Telefon') }}</label>
 
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <input id="phone" type="text" class="form-control" name="phone" required>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                     <div class="form-group row">
                         <label for="email" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('E-Mail') }}</label>
 
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
                             @if ($errors->has('email'))
@@ -84,7 +84,7 @@
                     <div class="form-group row">
                         <label for="history" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Istoric') }}</label>
 
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <textarea id="history" class="form-control" name="history" rows="4" required></textarea>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                     <div class="form-group row">
                         <label for="image" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Fotografie') }}</label>
 
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             {!! Form::file('image', array('class' => 'form-control')) !!}
                         </div>
                     </div>

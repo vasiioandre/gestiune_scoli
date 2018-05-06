@@ -29,6 +29,7 @@ Route::get('contact', 'ScoalaController@contact');
 
 Route::get('cladiri_arondate', 'PrimarieController@cladiri_arondate');
 Route::get('reparatii', 'PrimarieController@reparatii');
+Route::get('investitii', 'PrimarieController@investitii');
 
 
 
@@ -37,6 +38,11 @@ Route::post('adaugare_scoala', ['as'=>'adaugare_scoala.post','uses'=> 'AdaugareD
 
 Route::get('adaugare_cladire', 'AdaugareDateController@adaugare_cladire');
 Route::post('adaugare_cladire', ['as'=>'adaugare_cladire.post','uses'=> 'AdaugareDateController@adaugare_cladire_post']);
+
+Route::get('adaugare_reparatie', 'AdaugareDateController@adaugare_reparatie');
+Route::post('adaugare_reparatie_post', ['as'=>'adaugare_reparatie.post','uses'=> 'AdaugareDateController@adaugare_reparatie_post']);
+
+//Route::post('adaugare_reparatie_post', 'AdaugareDateController@adaugare_repararatie_post');
 
 
 

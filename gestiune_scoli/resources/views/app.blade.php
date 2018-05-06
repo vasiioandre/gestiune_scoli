@@ -78,14 +78,12 @@
                             </a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <li><a href="{{ url('adaugare_scoala') }}">Scoala</a></li>
-                                <li><a href="{{ url('adaugare_istoric') }}">Istoric</a></li>
                                 <li><a href="{{ url('adaugare_cladire') }}">Cladiri arondate</a></li>
-                                <li><a href="#">Reparatii</a></li>
-                                <li><a href="#">Investitii</a></li>
+                                <li><a href="{{ url('adaugare_reparatie') }}">Reparatii</a></li>
+                                <li><a href="">Investitii</a></li>
                                 <li><a href="#">Avarii</a></li>
                                 <li><a href="#">Utilitati</a></li>
                                 <li><a href="#">Organizare interna</a></li>
-                                <li><a href="#">Contact</a></li>
                             </ul>
                         </li>
                         <li>
@@ -95,14 +93,12 @@
                             </a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <li><a href="#">Scoala</a></li>
-                                <li><a href="#">Istoric</a></li>
                                 <li><a href="#">Cladiri arondate</a></li>
                                 <li><a href="#">Reparatii</a></li>
                                 <li><a href="#">Investitii</a></li>
                                 <li><a href="#">Avarii</a></li>
                                 <li><a href="#">Utilitati</a></li>
                                 <li><a href="#">Organizare interna</a></li>
-                                <li><a href="#">Contact</a></li>
                             </ul>
                         </li>
                     </ul>

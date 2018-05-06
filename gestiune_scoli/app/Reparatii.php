@@ -7,4 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Reparatii extends Model
 {
     protected $table = 'reparatii';
+
+    protected $fillable = [
+        'id_scoala',
+        'anul_finalizarii',
+        'detalii',
+        'suma_investita',
+        'firma'
+    ];
 }

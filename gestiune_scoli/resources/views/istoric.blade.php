@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-xs-12 hidden-sm col-md-5">
                     <div class="about-left">
-                        <img src="{{ URL::to('img/' . $school->imagine) }}" alt="">
+                        <img src="{{ URL::to('img/' . $school->fotografie) }}" alt="">
                     </div>
                 </div>
 
