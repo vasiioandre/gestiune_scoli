@@ -15,4 +15,9 @@ class Reparatii extends Model
         'suma_investita',
         'firma'
     ];
+
+    public function fotografii()
+    {
+        return $this->hasMany('App\Fotografii_Reparatii', 'id_reparatie', 'id_reparatie');
+    }
 }

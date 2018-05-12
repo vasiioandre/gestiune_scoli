@@ -105,13 +105,23 @@ class AdaugareDateController extends Controller
             'suma_investita' => Request::get('amount'),
             'firma' => Request::get('company')
         ]);
-        foreach ($request->photos as $photo) {
-            $filename = $photo->store('photos');
-            Fotografii_Reparatii::create([
-                'id_reparatie' => $product->id,
-                'nume_fotografie' => $filename
-            ]);
+
+        if ($request->photos)
+        {
+            $photo_nr = 0;
+
+            foreach ($request->photos as $photo) {
+                $photo_nr = $photo_nr + 1;
+                $imageName = time().$photo_nr.'.'.$photo->getClientOriginalExtension();
+                $photo->move(public_path('img'), $imageName);
+
+                Fotografii_Reparatii::create([
+                    'id_reparatie' => $product->id,
+                    'nume_fotografie' => $imageName
+                ]);
+            }
         }
+
         return back()
             ->with('success','Ati adaugat reparatia cu succes.');
     }

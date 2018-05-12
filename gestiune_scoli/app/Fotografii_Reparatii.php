@@ -13,8 +13,8 @@ class Fotografii_Reparatii extends Model
         'nume_fotografie'
     ];
 
-    public function product()
+    public function reparatie()
     {
-        return $this->belongsTo('App\Reparatii');
+        return $this->belongsTo('App\Reparatii', 'id_reparatie', 'id_reparatie');
     }
 }
