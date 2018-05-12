@@ -2,9 +2,26 @@
 
 @section('content')
 
-    <section id="adaugare_cladire" class="section appear clearfix">
-        <div class="container">
-            @foreach($scoala as $school)
+    @foreach($scoala as $school)
+
+        <div class="modal" tabindex="-1" role="dialog" id="DeleteSchool">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p>Sunteti sigur ca doriti sa stergeti scoala {{ $school->nume }} ? Stergerea va sterge toate cladiri arondate, reparatiile, invetitiile, avariile si utilitatile asociate. </p>
+                    </div>
+                    <div class="modal-footer">
+                            {!! Form::open(['url' => 'stergere_scoala']) !!}
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Anulare</button>
+                                {!! Form::submit('Da, sterge scoala.', ['class' => 'btn btn-danger', ]) !!}
+                            {!! Form::close() !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="adaugare_cladire" class="section appear clearfix">
+            <div class="container">
 
                 <div class="row mar-bot40">
                     <div class="col-md-offset-3 col-md-6">
@@ -104,16 +121,23 @@
                                 {!! Form::submit('Salveaza', ['class' => 'form-control btn btn-primary', 'name' => 'submitbutton', 'value' => 'save']) !!}
                             </div>
 
-                            <div class="col-md-2 ">
-                                {!! Form::submit('Sterge', ['class' => 'form-control btn btn-primary', 'name' => 'submitbutton', 'value' => 'delete']) !!}
+                            <div class="col-md-2 col-md-offset-1">
+                                <button
+                                        type="button"
+                                        class="btn btn-primary form-control"
+                                        data-toggle="modal"
+                                        data-target="#DeleteSchool">
+                                    Sterge scoala
+                                </button>
                             </div>
                         </div>
 
                     </form>
+
                 </div>
-            @endforeach
             </div>
         </section>
+    @endforeach
 
 @stop
 

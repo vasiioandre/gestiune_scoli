@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('home', 'HomeController@index');
+Route::get('home', 'HomeController@index')->name('home');
 Route::get('logout', 'HomeController@Logout');
 
 Route::get('istoric', 'ScoalaController@istoric_get');
@@ -48,6 +48,7 @@ Route::post('adaugare_reparatie_post', ['as'=>'adaugare_reparatie.post','uses'=>
 
 Route::get('editare_scoala', 'EditareDateController@editare_scoala');
 Route::post('editare_scoala', ['as'=>'editare_scoala.post','uses'=> 'EditareDateController@editare_scoala_post']);
+Route::post('stergere_scoala', 'EditareDateController@stergere_scoala');
 
 
 Route::get('test', 'PrimarieController@test');

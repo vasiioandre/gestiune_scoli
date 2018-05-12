@@ -82,4 +82,12 @@ class EditareDateController extends Controller
 //        }
 
     }
+
+    public function stergere_scoala()
+    {
+        $id = Session::get('selected_school');
+        DB::table('scoli')->where('id_scoala', '=', $id)->delete();
+
+        return redirect()->route('home') ->with('success','Scoala a fost stearsa din baza de date.');
+    }
 }

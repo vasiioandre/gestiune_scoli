@@ -21,7 +21,6 @@
 </head>
 
 <body>
-
     @section('user_menu')
 
         @if (Auth::check())
