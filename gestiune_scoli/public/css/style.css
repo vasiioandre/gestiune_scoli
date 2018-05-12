@@ -1123,7 +1123,7 @@ h1{
 .btn-arrow-left:before,
 .btn-arrow-left:after { /* make two squares (before and after), looking similar to the button */
 	content:"";
-	position: absolute;page-title
+	position: absolute;
 	top: 5px; /* move it down because of rounded corners */
 	width: 22px; /* same as height */
 	height: 22px; /* button_outer_height / sqrt(2) */
@@ -1391,5 +1391,8 @@ h1{
 .galery-title{
 	padding: 30px;
 }
+
+/* Editare date */
+.top-buffer { margin-top:40px; }
 
 

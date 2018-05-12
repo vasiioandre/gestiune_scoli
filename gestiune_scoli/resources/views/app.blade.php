@@ -87,12 +87,12 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false">
                                 <i class="fa fa-1x fa-wrench"></i>
                                 Editare date
                             </a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li><a href="#">Scoala</a></li>
+                            <ul class="collapse list-unstyled" id="pageSubmenu2">
+                                <li><a href="{{ url('editare_scoala') }}">Scoala</a></li>
                                 <li><a href="#">Cladiri arondate</a></li>
                                 <li><a href="#">Reparatii</a></li>
                                 <li><a href="#">Investitii</a></li>

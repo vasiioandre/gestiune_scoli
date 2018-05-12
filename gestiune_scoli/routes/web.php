@@ -46,6 +46,9 @@ Route::get('adaugare_reparatie', 'AdaugareDateController@adaugare_reparatie');
 Route::post('adaugare_reparatie_post', ['as'=>'adaugare_reparatie.post','uses'=> 'AdaugareDateController@adaugare_reparatie_post']);
 
 
+Route::get('editare_scoala', 'EditareDateController@editare_scoala');
+Route::post('editare_scoala', ['as'=>'editare_scoala.post','uses'=> 'EditareDateController@editare_scoala_post']);
+
 
 Route::get('test', 'PrimarieController@test');
 

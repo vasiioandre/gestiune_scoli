@@ -37,8 +37,8 @@ class AdaugareDateController extends Controller
             'nr_cf' => Request::get('nr_cf'),
             'adresa'=> Request::get('address'),
             'telefon' => Request::get('phone'),
-            'email' => Request::get('phone'),
-            'istoric' => Request::get('phone'),
+            'email' => Request::get('email'),
+            'istoric' => Request::get('history'),
             'fotografie' => $imageName,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
