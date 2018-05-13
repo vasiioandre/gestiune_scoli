@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Cladiri_Arondate;
 use App\Fotografii_Reparatii;
+use App\Organizare_Interna;
 use App\Reparatii;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\DB;
 use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -43,7 +45,6 @@ class PrimarieController extends Controller
         return view('reparatii')->with("reparatii", $reparatii);
     }
 
-
     public function test()
     {
         $id = Session::get('selected_school');
@@ -63,6 +64,20 @@ class PrimarieController extends Controller
         array_shift($photos);
 
         return view('galerie')->with("photos", $photos);
+    }
+
+    public function organizare_interna()
+    {
+        $id = Session::get('selected_school');
+//        $cladiri = Organizare_Interna::where('id_scoala', $id)->get();
+
+        $informatii = DB::table('organizare_interna')
+            ->join('scoli', 'organizare_interna.id_scoala', '=', 'scoli.id_scoala')
+            ->select('organizare_interna.*', 'scoli.nume', 'scoli.fotografie')
+            ->where('scoli.id_scoala', $id)
+            ->get();
+
+        return view('organizare_interna')->with("informatii", $informatii);
     }
 
 }

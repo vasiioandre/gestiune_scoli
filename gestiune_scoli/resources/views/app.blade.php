@@ -54,7 +54,7 @@
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a href="{{ url('organizare_interna') }}">
                                 <i class="fa fa-1x fa-user"></i>
                                 Organizare interna
                             </a>
@@ -82,7 +82,7 @@
                                 <li><a href="">Investitii</a></li>
                                 <li><a href="#">Avarii</a></li>
                                 <li><a href="#">Utilitati</a></li>
-                                <li><a href="#">Organizare interna</a></li>
+                                <li><a href="{{ url('adaugare_organizare') }}">Organizare interna</a></li>
                             </ul>
                         </li>
                         <li>

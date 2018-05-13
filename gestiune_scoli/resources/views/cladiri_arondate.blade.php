@@ -1,20 +1,20 @@
 @extends('app')
 
 @section('content')
-
+    @foreach($cladiri as $cladire)
     <div class="container" id="cladiri_arondate">
         <div class="container page-title">
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 ">
                     <div class="about-heading">
-                        <h1>Cladiri arondate la C.D. Loga</h1>
+                        <h1>Cladiri arondate la {{ $cladire->nume }}</h1>
                     </div>
                 </div>
             </div>
         </div>
 
 
-        @foreach($cladiri as $cladire)
+
             <div class="row my-md-5 mx-md-3" id="cladiri_arondate">
                 <div class="col-md-2">
                     <div class="img-thumbnail">
@@ -50,11 +50,8 @@
                     </div>
                 </div>
             </div>
-        @endforeach
-
-
     </div>
-
+    @endforeach
 @stop
 
 
