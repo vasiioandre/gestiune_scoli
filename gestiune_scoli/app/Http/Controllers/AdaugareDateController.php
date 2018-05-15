@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Fotografii_Reparatii;
+use App\Investitii;
 use App\Reparatii;
 use App\Scoala;
 use Carbon\Carbon;
@@ -124,6 +125,58 @@ class AdaugareDateController extends Controller
 
         return back()
             ->with('success','Ati adaugat reparatia cu succes.');
+    }
+
+    public function adaugare_investitie()
+    {
+        $school_names = Scoala::all('nume', 'id_scoala');
+        $school_name_selected = array();
+        foreach ($school_names as $school_name) {
+            $school_name_selected[$school_name->id_scoala] = $school_name->nume;
+        }
+
+        return view('adaugare_date.adaugare_investitie')->with("school_names", $school_name_selected);
+    }
+
+    public function adaugare_investitie_post()
+    {
+        if (request()->authorization)
+        {
+            $authName = uniqid() . request()->authorization->getClientOriginalName();
+            request()->authorization->move(public_path('img'), $authName);
+        }
+        else
+            $authName = NULL;
+
+        if (request()->project)
+        {
+            $projectName = uniqid() . request()->project->getClientOriginalName();
+            request()->project->move(public_path('img'), $projectName);
+        }
+        else
+            $projectName = NULL;
+
+        if (request()->reception)
+        {
+            $receptionName = uniqid() . request()->reception->getClientOriginalName();
+            request()->reception->move(public_path('img'), $receptionName);
+        }
+        else
+            $receptionName = NULL;
+
+        Investitii::create([
+            'id_scoala' => Request::get('selected_school'),
+            'anul_finalizarii' => Request::get('year'),
+            'detalii' => Request::get('details'),
+            'suma_investita' => Request::get('amount'),
+            'firma' => Request::get('company'),
+            'pdf_autorizatie' => $authName,
+            'pdf_proiect' => $projectName,
+            'pdf_receptie' => $receptionName,
+        ]);
+
+        return back()
+            ->with('success','Ati adaugat investitia cu succes.');
     }
 
     public function adaugare_organizare()

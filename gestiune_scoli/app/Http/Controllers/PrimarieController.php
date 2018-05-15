@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cladiri_Arondate;
 use App\Fotografii_Reparatii;
+use App\Investitii;
 use App\Organizare_Interna;
 use App\Reparatii;
 use Illuminate\Support\Facades\App;
@@ -45,14 +46,6 @@ class PrimarieController extends Controller
         return view('reparatii')->with("reparatii", $reparatii);
     }
 
-    public function test()
-    {
-        $id = Session::get('selected_school');
-        $reparatii = Reparatii::where('id_scoala', $id)->get();
-
-        return view('test3')->with("reparatii", $reparatii);
-    }
-
     public function galerie()
     {
         return redirect()->route('reparatii');
@@ -66,10 +59,17 @@ class PrimarieController extends Controller
         return view('galerie')->with("photos", $photos);
     }
 
+    public function investitii()
+    {
+        $id = Session::get('selected_school');
+        $investitii = Investitii::where('id_scoala', $id)->get();
+
+        return view('investitii')->with("investitii", $investitii);
+    }
+
     public function organizare_interna()
     {
         $id = Session::get('selected_school');
-//        $cladiri = Organizare_Interna::where('id_scoala', $id)->get();
 
         $informatii = DB::table('organizare_interna')
             ->join('scoli', 'organizare_interna.id_scoala', '=', 'scoli.id_scoala')

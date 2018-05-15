@@ -47,7 +47,7 @@
                             <ul class="collapse list-unstyled" id="homeSubmenu">
                                 <li><a href="{{ url('cladiri_arondate') }}">Cladiri arondate</a></li>
                                 <li><a href="{{ url('reparatii') }}">Reparatii</a></li>
-                                <li><a href="#">Investitii</a></li>
+                                <li><a href="{{ url('investitii') }}">Investitii</a></li>
                                 <li><a href="#">Avarii</a></li>
                                 <li><a href="#">Utilitati</a></li>
                             </ul>
@@ -79,7 +79,7 @@
                                 <li><a href="{{ url('adaugare_scoala') }}">Scoala</a></li>
                                 <li><a href="{{ url('adaugare_cladire') }}">Cladiri arondate</a></li>
                                 <li><a href="{{ url('adaugare_reparatie') }}">Reparatii</a></li>
-                                <li><a href="">Investitii</a></li>
+                                <li><a href="{{ url('adaugare_investitie') }}">Investitii</a></li>
                                 <li><a href="#">Avarii</a></li>
                                 <li><a href="#">Utilitati</a></li>
                                 <li><a href="{{ url('adaugare_organizare') }}">Organizare interna</a></li>

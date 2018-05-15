@@ -46,6 +46,9 @@ Route::post('adaugare_cladire', ['as'=>'adaugare_cladire.post','uses'=> 'Adaugar
 Route::get('adaugare_reparatie', 'AdaugareDateController@adaugare_reparatie');
 Route::post('adaugare_reparatie_post', ['as'=>'adaugare_reparatie.post','uses'=> 'AdaugareDateController@adaugare_reparatie_post']);
 
+Route::get('adaugare_investitie', 'AdaugareDateController@adaugare_investitie');
+Route::post('adaugare_investitie', ['as'=>'adaugare_investitie.post','uses'=> 'AdaugareDateController@adaugare_investitie_post']);
+
 Route::get('adaugare_organizare', 'AdaugareDateController@adaugare_organizare');
 Route::post('adaugare_organizare', ['as'=>'adaugare_organizare.post','uses'=> 'AdaugareDateController@adaugare_organizare_post']);
 
