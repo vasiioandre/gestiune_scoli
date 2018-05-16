@@ -27,11 +27,13 @@
             <div class="wrapper fill">
                 <nav id="sidebar">
                     <div class="sidebar-header">
-                        <h3>MENIU</h3>
+                        <h3 align="center">MENIU</h3>
                         <strong>Meniu</strong>
+                        <p class="align-menu">{{ Session::get('selected_school_name') }}</p>
                     </div>
 
                     <ul class="list-unstyled components">
+
                         <li {{{ (Request::is('istoric') ? 'class=active' : "") }}}>
                             <a href="{{ url('istoric') }}">
                                 <i class="fa fa-1x fa-home"></i>
@@ -76,7 +78,9 @@
                                 Adaugare date
                             </a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li><a href="{{ url('adaugare_scoala') }}">Scoala</a></li>
+                                @if(Request::user()->hasRole(['admin', 'primarie']))
+                                    <li><a href="{{ url('adaugare_scoala') }}">Scoala</a></li>
+                                @endif
                                 <li><a href="{{ url('adaugare_cladire') }}">Cladiri arondate</a></li>
                                 <li><a href="{{ url('adaugare_reparatie') }}">Reparatii</a></li>
                                 <li><a href="{{ url('adaugare_investitie') }}">Investitii</a></li>
@@ -103,12 +107,14 @@
                     </ul>
 
                     <ul class="list-unstyled components">
-                        <li>
-                            <a href="{{ url('home') }}">
-                                <i class="fa fa-1x fa-building"></i>
-                                Selecteaza alta scoala
-                            </a>
-                        </li>
+                        @if(Request::user()->hasRole(['admin', 'primarie']))
+                            <li>
+                                <a href="{{ url('home') }}">
+                                    <i class="fa fa-1x fa-building"></i>
+                                    Selecteaza alta scoala
+                                </a>
+                            </li>
+                        @endif
 
                         <li>
                             <a href="{{ url('logout') }}">

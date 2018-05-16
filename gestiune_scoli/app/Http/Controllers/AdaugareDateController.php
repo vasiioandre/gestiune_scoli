@@ -7,8 +7,9 @@ use App\Investitii;
 use App\Reparatii;
 use App\Scoala;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Request;
+use Session;
 use App\Http\Requests\UploadRequest;
 
 class AdaugareDateController extends Controller
@@ -18,12 +19,14 @@ class AdaugareDateController extends Controller
         $this->middleware('auth');
     }
 
-    public function adaugare_scoala()
+    public function adaugare_scoala(Request $request)
     {
+        $request->user()->authorizeRoles(['admin', 'primarie']);
+
         return view('adaugare_date.adaugare_scoala');
     }
 
-    public function adaugare_scoala_post()
+    public function adaugare_scoala_post(Request $request)
     {
         if (request()->image)
         {
@@ -34,19 +37,19 @@ class AdaugareDateController extends Controller
             $imageName = NULL;
 
         DB::table('scoli')->insert([
-            'nume' => Request::get('name'),
-            'nr_cf' => Request::get('nr_cf'),
-            'adresa'=> Request::get('address'),
-            'telefon' => Request::get('phone'),
-            'email' => Request::get('email'),
-            'istoric' => Request::get('history'),
+            'nume' => $request->input('name'),
+            'nr_cf' => $request->input('nr_cf'),
+            'adresa'=> $request->input('address'),
+            'telefon' => $request->input('phone'),
+            'email' => $request->input('email'),
+            'istoric' => $request->input('history'),
             'fotografie' => $imageName,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
 
         return back()
-            ->with('success','Ati adaugat cladirea cu succes.');
+            ->with('success','Ati adaugat scoala cu succes.');
     }
 
 
@@ -61,7 +64,7 @@ class AdaugareDateController extends Controller
         return view('adaugare_date.adaugare_cladire')->with("school_names", $school_name_selected);
     }
 
-    public function adaugare_cladire_post()
+    public function adaugare_cladire_post(Request $request)
     {
         if (request()->image)
         {
@@ -72,10 +75,10 @@ class AdaugareDateController extends Controller
             $imageName = NULL;
 
         DB::table('cladiri_arondate')->insert([
-            'id_scoala' => Request::get('selected_school'),
-            'nume' => Request::get('name'),
-            'adresa'=> Request::get('address'),
-            'nr_cf' => Request::get('nr_cf'),
+            'id_scoala' => Session::get('selected_school'),
+            'nume' => $request->input('name'),
+            'adresa'=> $request->input('address'),
+            'nr_cf' => $request->input('nr_cf'),
             'fotografie' => $imageName,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -97,14 +100,14 @@ class AdaugareDateController extends Controller
         return view('adaugare_date.adaugare_reparatie')->with("school_names", $school_name_selected);
     }
 
-    public function adaugare_reparatie_post(UploadRequest $request)
+    public function adaugare_reparatie_post(Request $request)
     {
         $product = Reparatii::create([
-            'id_scoala' => Request::get('selected_school'),
-            'anul_finalizarii' => Request::get('year'),
-            'detalii' => Request::get('details'),
-            'suma_investita' => Request::get('amount'),
-            'firma' => Request::get('company')
+            'id_scoala' => $request->input('selected_school'),
+            'anul_finalizarii' => $request->input('year'),
+            'detalii' => $request->input('details'),
+            'suma_investita' => $request->input('amount'),
+            'firma' => $request->input('company')
         ]);
 
         if ($request->photos)
@@ -138,7 +141,7 @@ class AdaugareDateController extends Controller
         return view('adaugare_date.adaugare_investitie')->with("school_names", $school_name_selected);
     }
 
-    public function adaugare_investitie_post()
+    public function adaugare_investitie_post(Request $request)
     {
         if (request()->authorization)
         {
@@ -165,11 +168,11 @@ class AdaugareDateController extends Controller
             $receptionName = NULL;
 
         Investitii::create([
-            'id_scoala' => Request::get('selected_school'),
-            'anul_finalizarii' => Request::get('year'),
-            'detalii' => Request::get('details'),
-            'suma_investita' => Request::get('amount'),
-            'firma' => Request::get('company'),
+            'id_scoala' =>  $request->input('selected_school'),
+            'anul_finalizarii' => $request->input('year'),
+            'detalii' =>  $request->input('details'),
+            'suma_investita' =>  $request->input('amount'),
+            'firma' =>  $request->input('company'),
             'pdf_autorizatie' => $authName,
             'pdf_proiect' => $projectName,
             'pdf_receptie' => $receptionName,
@@ -190,13 +193,13 @@ class AdaugareDateController extends Controller
         return view('adaugare_date.adaugare_organizare')->with("school_names", $school_name_selected);
     }
 
-    public function adaugare_organizare_post()
+    public function adaugare_organizare_post(Request $request)
     {
         DB::table('organizare_interna')->insert([
-            'id_scoala' => Request::get('selected_school'),
-            'nr_clase' => Request::get('nr_clase'),
-            'nr_elevi' => Request::get('nr_elevi'),
-            'nr_cadre_didactice' => Request::get('nr_cadre_didactice'),
+            'id_scoala' =>  $request->input('selected_school'),
+            'nr_clase' => $request->input('nr_clase'),
+            'nr_elevi' =>  $request->input('nr_elevi'),
+            'nr_cadre_didactice' =>  $request->input('nr_cadre_didactice'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);

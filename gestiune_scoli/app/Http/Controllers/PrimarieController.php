@@ -25,7 +25,7 @@ class PrimarieController extends Controller
         return "Index Page";
     }
 
-    public function cladiri_arondate()
+    public function cladiri_arondate(Request $request)
     {
         $id = Session::get('selected_school');
         $cladiri = Cladiri_Arondate::where('id_scoala', $id)->get();
@@ -37,11 +37,6 @@ class PrimarieController extends Controller
     {
         $id = Session::get('selected_school');
         $reparatii = Reparatii::where('id_scoala', $id)->get();
-
-        //$locale = App::getLocale();
-        //$reparatie =  Reparatii::where('id_reparatie', 7)->first();
-
-        // return  $reparatie->fotografii;
 
         return view('reparatii')->with("reparatii", $reparatii);
     }

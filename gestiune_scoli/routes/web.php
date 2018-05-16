@@ -22,8 +22,8 @@ Route::get('/', function () {
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('logout', 'HomeController@Logout');
 
-Route::get('istoric', 'ScoalaController@istoric_get');
-Route::post('istoric', 'ScoalaController@istoric');
+Route::get('istoric', 'ScoalaController@istoric_get')->name('get_istoric');
+Route::post('istoric', 'ScoalaController@istoric_post');
 
 Route::get('contact', 'ScoalaController@contact');
 
