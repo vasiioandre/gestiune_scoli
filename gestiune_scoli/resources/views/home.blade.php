@@ -47,18 +47,13 @@
                     center: uluru
                 });
                 map.setTilt(100);
-                var marker = new google.maps.Marker({
-                    position: {lat: 45.752968, lng: 21.234537},
-                    map: map,
-                });
-                var marker = new google.maps.Marker({
-                    position: {lat: 45.741508, lng: 21.227305},
-                    map: map,
-                });
-                var marker = new google.maps.Marker({
-                    position: {lat: 45.757108, lng: 21.226652},
-                    map: map,
-                });
+
+                @foreach($coordinates as $coordinate)
+                    var marker = new google.maps.Marker({
+                        position: {lat: {{ $coordinate->latitudine }}, lng: {{ $coordinate->longitudine }} },
+                        map: map,
+                    });
+                @endforeach
 
             }
         </script>

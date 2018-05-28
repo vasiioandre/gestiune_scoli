@@ -36,6 +36,16 @@ class AdaugareDateController extends Controller
         else
             $imageName = NULL;
 
+        if(request()->latitudine)
+            $latitudine = request()->latitudine;
+        else
+            $latitudine = NULL;
+
+        if(request()->longitudine)
+            $longitudine = request()->longitudine;
+        else
+            $longitudine = NULL;
+
         DB::table('scoli')->insert([
             'nume' => $request->input('name'),
             'nr_cf' => $request->input('nr_cf'),
@@ -44,6 +54,8 @@ class AdaugareDateController extends Controller
             'email' => $request->input('email'),
             'istoric' => $request->input('history'),
             'fotografie' => $imageName,
+            'latitudine' => $latitudine,
+            'longitudine' => $longitudine,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);

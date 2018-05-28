@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Scoala;
 use App\User;
+use Illuminate\Support\Facades\DB;
 use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,13 +17,15 @@ class HomeController extends Controller
         {
             if($request->user()->hasRole(['admin', 'primarie']))
             {
-                $school_names = Scoala::all('nume', 'id_scoala');
+                $school_names = DB::table('scoli')->select('nume', 'id_scoala')->orderBy('nume')->get();
                 $school_name_selected = array();
                 foreach ($school_names as $school_name) {
                     $school_name_selected[$school_name->id_scoala] = $school_name->nume;
                 }
 
-                return view('home')->with("school_names", $school_name_selected);
+                $coordonate = DB::table('scoli')->select('nume', 'latitudine', 'longitudine')->whereNotNull('latitudine')->whereNotNull('longitudine')->get();
+
+                return view('home')->with("school_names", $school_name_selected)->with("coordinates", $coordonate);
             }
             else
             {

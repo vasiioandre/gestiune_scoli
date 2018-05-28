@@ -98,6 +98,22 @@
                     </div>
 
                     <div class="form-group row">
+                        <label for="latitudine" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Latitudine') }}</label>
+
+                        <div class="col-md-5">
+                            <input id="latitudine" type="text" class="form-control" name="latitudine">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="longitudine" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Longitudine') }}</label>
+
+                        <div class="col-md-5">
+                            <input id="longitudine" type="text" class="form-control" name="longitudine">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
                         <div class="col-md-2 col-md-offset-5">
                             {!! Form::submit('Adauga', ['class' => 'form-control btn btn-primary', ]) !!}
                         </div>
