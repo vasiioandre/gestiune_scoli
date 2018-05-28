@@ -52,10 +52,17 @@ Route::post('adaugare_investitie', ['as'=>'adaugare_investitie.post','uses'=> 'A
 Route::get('adaugare_organizare', 'AdaugareDateController@adaugare_organizare');
 Route::post('adaugare_organizare', ['as'=>'adaugare_organizare.post','uses'=> 'AdaugareDateController@adaugare_organizare_post']);
 
+Route::get('adaugare_utilizatori', 'AdaugareDateController@adaugare_utilizatori');
+Route::post('adaugare_utilizatori', ['as'=>'adaugare_utilizatori.post','uses'=> 'AdaugareDateController@adaugare_utilizatori_post']);
 
 Route::get('editare_scoala', 'EditareDateController@editare_scoala');
 Route::post('editare_scoala', ['as'=>'editare_scoala.post','uses'=> 'EditareDateController@editare_scoala_post']);
 Route::post('stergere_scoala', 'EditareDateController@stergere_scoala');
+
+Route::get('editare_utilizatori', 'EditareDateController@utilizatori');
+Route::delete('stergere_utilizator/{id}', ['as'=>'stergere_utilizator','uses'=> 'EditareDateController@stergere_utilizator']);
+//Route::delete('stergere_utilizatori/{id}', 'EditareDateController@stergere_utilizator');
+//Route::delete('stergere_utilizatori_selectati', 'EditareDateController@stergere_utilizatori_selectati');
 
 
 Route::get('test', 'PrimarieController@test');

@@ -57,7 +57,7 @@
 
                         <li>
                             <a href="{{ url('organizare_interna') }}">
-                                <i class="fa fa-1x fa-user"></i>
+                                <i class="fa fa-1x fa-sitemap"></i>
                                 Organizare interna
                             </a>
                         </li>
@@ -89,9 +89,10 @@
                                 <li><a href="{{ url('adaugare_organizare') }}">Organizare interna</a></li>
                             </ul>
                         </li>
+
                         <li>
                             <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false">
-                                <i class="fa fa-1x fa-wrench"></i>
+                                <i class="fa fa-1x fa-edit"></i>
                                 Editare date
                             </a>
                             <ul class="collapse list-unstyled" id="pageSubmenu2">
@@ -104,13 +105,26 @@
                                 <li><a href="#">Organizare interna</a></li>
                             </ul>
                         </li>
+
+                        @if(Request::user()->hasRole(['admin']))
+                            <li>
+                                <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false">
+                                    <i class="fa fa-1x fa-user"></i>
+                                    Administrare utilizatori
+                                </a>
+                                <ul class="collapse list-unstyled" id="pageSubmenu3">
+                                    <li><a href="{{ url('adaugare_utilizatori') }}">Adaugare utilizator</a></li>
+                                    <li><a href="{{ url('editare_utilizatori') }}">Editare utilizatori</a></li>
+                                </ul>
+                            </li>
+                        @endif
                     </ul>
 
                     <ul class="list-unstyled components">
                         @if(Request::user()->hasRole(['admin', 'primarie']))
                             <li>
                                 <a href="{{ url('home') }}">
-                                    <i class="fa fa-1x fa-building"></i>
+                                    <i class="fa fa-1x fa-undo"></i>
                                     Selecteaza alta scoala
                                 </a>
                             </li>

@@ -55,13 +55,7 @@ class AdaugareDateController extends Controller
 
     public function adaugare_cladire()
     {
-        $school_names = Scoala::all('nume', 'id_scoala');
-        $school_name_selected = array();
-        foreach ($school_names as $school_name) {
-            $school_name_selected[$school_name->id_scoala] = $school_name->nume;
-        }
-
-        return view('adaugare_date.adaugare_cladire')->with("school_names", $school_name_selected);
+        return view('adaugare_date.adaugare_cladire');
     }
 
     public function adaugare_cladire_post(Request $request)
@@ -206,6 +200,19 @@ class AdaugareDateController extends Controller
 
         return back()
             ->with('success','Ati adaugat informatiile cu succes.');
+    }
+
+    public function adaugare_utilizatori(Request $request)
+    {
+        $request->user()->authorizeRoles(['admin']);
+
+        $school_names = Scoala::all('nume', 'id_scoala');
+        $school_name_selected = array();
+        foreach ($school_names as $school_name) {
+            $school_name_selected[$school_name->id_scoala] = $school_name->nume;
+        }
+
+        return view('adaugare_date.adaugare_utilizatori')->with("school_names", $school_name_selected);
     }
 
 }

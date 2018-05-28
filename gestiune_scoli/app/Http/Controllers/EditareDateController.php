@@ -90,4 +90,22 @@ class EditareDateController extends Controller
 
         return redirect()->route('home') ->with('success','Scoala a fost stearsa din baza de date.');
     }
+
+
+    public function utilizatori()
+    {
+        $utilizatori = DB::table("users")->get();
+        return view('editare_date.editare_utilizatori',compact('utilizatori'));
+    }
+
+    public function stergere_utilizator($id)
+    {
+        DB::table("users")->delete($id);
+
+        return back()
+            ->with('success','Utilizatorul a fost sters.');
+    }
+
+
+
 }

@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('content_visitor')
+@section('content')
     <section class="featured">
     </section>
 
@@ -101,4 +101,7 @@
         </div>
     </section>
 
+@stop
+
+@section('login_menu')
 @endsection
