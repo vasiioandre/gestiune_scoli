@@ -8,6 +8,7 @@ use App\Fotografii_Reparatii;
 use App\Investitii;
 use App\Organizare_Interna;
 use App\Reparatii;
+use App\Utilitati;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -90,6 +91,14 @@ class PrimarieController extends Controller
         $avarii = Avarii::where('id_scoala', $id)->get();
 
         return view('avarii')->with("avarii", $avarii);
+    }
+
+    public function utilitati()
+    {
+        $id = Session::get('selected_school');
+        $utilitati = Utilitati::where('id_scoala', $id)->get();
+
+        return view('utilitati')->with("utilitati", $utilitati);
     }
 
     public function organizare_interna()

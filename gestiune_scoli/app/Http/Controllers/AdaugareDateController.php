@@ -7,6 +7,7 @@ use App\Fotografii_Reparatii;
 use App\Investitii;
 use App\Reparatii;
 use App\Scoala;
+use App\Utilitati;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -217,6 +218,24 @@ class AdaugareDateController extends Controller
 
         return back()
             ->with('success','Ati adaugat avaria cu succes.');
+    }
+
+    public function adaugare_utilitati()
+    {
+        return view('adaugare_date.adaugare_utilitati');
+    }
+
+    public function adaugare_utilitati_post(Request $request)
+    {
+        Utilitati::create([
+            'id_scoala' =>  Session::get('selected_school'),
+            'data' => Carbon::now()->toDateString(),
+            'consum_apa' =>  $request->input('water'),
+            'consum_caldura' =>  $request->input('heat'),
+        ]);
+
+        return back()
+            ->with('success','Ati adaugat utilitatile cu succes.');
     }
 
     public function adaugare_organizare()

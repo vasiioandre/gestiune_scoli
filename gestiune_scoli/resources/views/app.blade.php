@@ -44,7 +44,7 @@
                             </a>
                         </li>
 
-                        <li {{{ (Request::is('cladiri_arondate') ? 'class=active' : "") }}}>
+                        <li {{{ (Request::is('cladiri_arondate', 'reparatii', 'investitii', 'avarii', 'utilitati') ? 'class=active' : "") }}}>
                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
                                 <i class="fa fa-1x fa-folder"></i>
                                 Informatii patrimoniale
@@ -54,7 +54,7 @@
                                 <li><a href="{{ url('reparatii') }}">Reparatii</a></li>
                                 <li><a href="{{ url('investitii') }}">Investitii</a></li>
                                 <li><a href="{{ url('avarii') }}">Avarii</a></li>
-                                <li><a href="#">Utilitati</a></li>
+                                <li><a href="{{ url('utilitati') }}">Utilitati</a></li>
                             </ul>
                         </li>
 
@@ -75,7 +75,7 @@
                     </ul>
 
                     <ul class="list-unstyled components">
-                        <li>
+                        <li {{{ (Request::is('adaugare_cladire', 'adaugare_reparatie', 'adaugare_investitie', 'adaugare_avarie', 'adaugare_utilitati        web', 'adaugare_organizare') ? 'class=active' : "") }}}>
                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
                                 <i class="fa fa-1x fa-plus"></i>
                                 Adaugare date
@@ -88,12 +88,12 @@
                                 <li><a href="{{ url('adaugare_reparatie') }}">Reparatii</a></li>
                                 <li><a href="{{ url('adaugare_investitie') }}">Investitii</a></li>
                                 <li><a href="{{ url('adaugare_avarie') }}">Avarii</a></li>
-                                <li><a href="#">Utilitati</a></li>
+                                <li><a href="{{ url('adaugare_utilitati') }}">Utilitati</a></li>
                                 <li><a href="{{ url('adaugare_organizare') }}">Organizare interna</a></li>
                             </ul>
                         </li>
 
-                        <li>
+                        <li {{{ (Request::is('editare_scoala') ? 'class=active' : "") }}}>
                             <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false">
                                 <i class="fa fa-1x fa-edit"></i>
                                 Editare date
@@ -110,7 +110,7 @@
                         </li>
 
                         @if(Request::user()->hasRole(['admin']))
-                            <li>
+                            <li {{{ (Request::is('adaugare_utilizatori', 'editare_utilizatori') ? 'class=active' : "") }}}>
                                 <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false">
                                     <i class="fa fa-1x fa-user"></i>
                                     Administrare utilizatori
