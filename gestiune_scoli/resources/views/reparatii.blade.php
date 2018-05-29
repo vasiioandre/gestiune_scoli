@@ -112,6 +112,12 @@
             @endforeach
 
             </div>
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-5">
+                {{ $reparatii->links() }}
+            </div>
+        </div>
+
     </section>
 
 @stop

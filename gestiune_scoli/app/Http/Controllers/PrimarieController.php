@@ -39,7 +39,7 @@ class PrimarieController extends Controller
     public function reparatii()
     {
         $id = Session::get('selected_school');
-        $reparatii = Reparatii::where('id_scoala', $id)->orderBy('anul_finalizarii', 'desc')->get();
+        $reparatii = Reparatii::where('id_scoala', $id)->orderBy('anul_finalizarii', 'desc')->simplePaginate(2);
 
         return view('reparatii')->with("reparatii", $reparatii);
     }
