@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Avarii;
 use App\Cladiri_Arondate;
 use App\Fotografii_Reparatii;
 use App\Investitii;
@@ -37,7 +38,7 @@ class PrimarieController extends Controller
     public function reparatii()
     {
         $id = Session::get('selected_school');
-        $reparatii = Reparatii::where('id_scoala', $id)->get();
+        $reparatii = Reparatii::where('id_scoala', $id)->orderBy('anul_finalizarii', 'desc')->get();
 
         return view('reparatii')->with("reparatii", $reparatii);
     }
@@ -51,7 +52,7 @@ class PrimarieController extends Controller
             $id = Session::get('selected_school');
 
 //            $reparatii = Reparatii::where('anul_finalizarii', 'LIKE', '%' . $anul_finalizarii . "%")->get();
-            $reparatii = Reparatii::where('id_scoala', $id)->where('anul_finalizarii', $anul_finalizarii)->get();
+            $reparatii = Reparatii::where('id_scoala', $id)->where('anul_finalizarii', $anul_finalizarii)->orderBy('anul_finalizarii', 'desc')->get();
 
             if(count($reparatii) > 0)
                 return view('reparatii')->with("reparatii", $reparatii);
@@ -81,6 +82,14 @@ class PrimarieController extends Controller
         $investitii = Investitii::where('id_scoala', $id)->get();
 
         return view('investitii')->with("investitii", $investitii);
+    }
+
+    public function avarii()
+    {
+        $id = Session::get('selected_school');
+        $avarii = Avarii::where('id_scoala', $id)->get();
+
+        return view('avarii')->with("avarii", $avarii);
     }
 
     public function organizare_interna()

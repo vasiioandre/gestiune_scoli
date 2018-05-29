@@ -29,7 +29,8 @@ Route::get('contact', 'ScoalaController@contact');
 
 Route::get('cladiri_arondate', 'PrimarieController@cladiri_arondate');
 Route::get('reparatii', 'PrimarieController@reparatii')->name('reparatii');
-Route::get('investitii', 'PrimarieController@investitii');
+Route::get('investitii', 'PrimarieController@investitii')->name('investitii');
+Route::get('avarii', 'PrimarieController@avarii')->name('avarii');
 Route::get('organizare_interna', 'PrimarieController@organizare_interna');
 
 Route::post('cautare_reparatie', 'PrimarieController@cautare_reparatie')->name('cautare_reparatie');
@@ -49,6 +50,9 @@ Route::post('adaugare_reparatie_post', ['as'=>'adaugare_reparatie.post','uses'=>
 
 Route::get('adaugare_investitie', 'AdaugareDateController@adaugare_investitie');
 Route::post('adaugare_investitie', ['as'=>'adaugare_investitie.post','uses'=> 'AdaugareDateController@adaugare_investitie_post']);
+
+Route::get('adaugare_avarie', 'AdaugareDateController@adaugare_avarie');
+Route::post('adaugare_avarie', ['as'=>'adaugare_avarie.post','uses'=> 'AdaugareDateController@adaugare_avarie_post']);
 
 Route::get('adaugare_organizare', 'AdaugareDateController@adaugare_organizare');
 Route::post('adaugare_organizare', ['as'=>'adaugare_organizare.post','uses'=> 'AdaugareDateController@adaugare_organizare_post']);

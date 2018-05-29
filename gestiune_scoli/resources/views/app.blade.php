@@ -16,6 +16,9 @@
     <link href="{{ url('skin/default.css') }}" rel="stylesheet">
     <link href="{{ url('js/fancybox/jquery.fancybox.css') }}" rel="stylesheet">
 
+    <link href="{{ url('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+    {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet">--}}
+
     <link href="{{ url('css/styleSideBar.css') }}" rel="stylesheet">
 
 </head>
@@ -50,7 +53,7 @@
                                 <li><a href="{{ url('cladiri_arondate') }}">Cladiri arondate</a></li>
                                 <li><a href="{{ url('reparatii') }}">Reparatii</a></li>
                                 <li><a href="{{ url('investitii') }}">Investitii</a></li>
-                                <li><a href="#">Avarii</a></li>
+                                <li><a href="{{ url('avarii') }}">Avarii</a></li>
                                 <li><a href="#">Utilitati</a></li>
                             </ul>
                         </li>
@@ -84,7 +87,7 @@
                                 <li><a href="{{ url('adaugare_cladire') }}">Cladiri arondate</a></li>
                                 <li><a href="{{ url('adaugare_reparatie') }}">Reparatii</a></li>
                                 <li><a href="{{ url('adaugare_investitie') }}">Investitii</a></li>
-                                <li><a href="#">Avarii</a></li>
+                                <li><a href="{{ url('adaugare_avarie') }}">Avarii</a></li>
                                 <li><a href="#">Utilitati</a></li>
                                 <li><a href="{{ url('adaugare_organizare') }}">Organizare interna</a></li>
                             </ul>
@@ -230,6 +233,8 @@
     <script src="{{ url('js/stellar.js') }}"></script>
     <script src="{{ url('js/jquery.appear.js') }}"></script>
     <script src="{{ url('js/main.js') }}"></script>
+    <script src="{{ url('js/bootstrap-datetimepicker.min.js') }}"></script>
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>--}}
 
 
 </body>

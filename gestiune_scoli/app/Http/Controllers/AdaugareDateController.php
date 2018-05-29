@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Avarii;
 use App\Fotografii_Reparatii;
 use App\Investitii;
 use App\Reparatii;
@@ -138,13 +139,7 @@ class AdaugareDateController extends Controller
 
     public function adaugare_investitie()
     {
-        $school_names = Scoala::all('nume', 'id_scoala');
-        $school_name_selected = array();
-        foreach ($school_names as $school_name) {
-            $school_name_selected[$school_name->id_scoala] = $school_name->nume;
-        }
-
-        return view('adaugare_date.adaugare_investitie')->with("school_names", $school_name_selected);
+        return view('adaugare_date.adaugare_investitie');
     }
 
     public function adaugare_investitie_post(Request $request)
@@ -186,6 +181,42 @@ class AdaugareDateController extends Controller
 
         return back()
             ->with('success','Ati adaugat investitia cu succes.');
+    }
+
+    public function adaugare_avarie()
+    {
+        return view('adaugare_date.adaugare_avarie');
+    }
+
+    public function adaugare_avarie_post(Request $request)
+    {
+        if (request()->solicitation)
+        {
+            $solicitationName = uniqid() . request()->solicitation->getClientOriginalName();
+            request()->solicitation->move(public_path('img'), $solicitationName);
+        }
+        else
+            $solicitationName = NULL;
+
+        if (request()->reception)
+        {
+            $receptionName = uniqid() . request()->reception->getClientOriginalName();
+            request()->reception->move(public_path('img'), $receptionName);
+        }
+        else
+            $receptionName = NULL;
+
+        Avarii::create([
+            'id_scoala' =>  Session::get('selected_school'),
+            'data_incident' => Carbon::now(),
+            'suma' =>  $request->input('amount'),
+            'firma' =>  $request->input('company'),
+            'pdf_solicitare' => $solicitationName,
+            'pdf_receptie' => $receptionName
+        ]);
+
+        return back()
+            ->with('success','Ati adaugat avaria cu succes.');
     }
 
     public function adaugare_organizare()
