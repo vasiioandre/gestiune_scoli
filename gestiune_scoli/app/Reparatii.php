@@ -20,4 +20,14 @@ class Reparatii extends Model
     {
         return $this->hasMany('App\Fotografii_Reparatii', 'id_reparatie', 'id_reparatie');
     }
+
+    public static function scopeSearchByKeyword($query, $keyword)
+    {
+        if ($keyword!='') {
+            $query->where(function ($query) use ($keyword) {
+                $query->where("anul_finalizarii", "LIKE","%$keyword%");
+            });
+        }
+        return $query;
+    }
 }

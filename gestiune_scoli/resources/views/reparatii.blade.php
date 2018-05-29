@@ -14,6 +14,38 @@
                 </div>
             </div>
 
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+            @endif
+
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <strong>Atentie!</strong> Nu s-au putut salva datele in baza de date.
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <div class="row cautare">
+                <form method="POST" action="{{ url('cautare_reparatie') }}">
+                    {{ csrf_field() }}
+                    <div class="row">
+                        <div class="col-md-3 col-md-offset-1">
+                            <input type="text" name="search" class="form-control" placeholder="Cauta reparatii dupa anul finalizarii" value="{{ old('search') }}">
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-primary">Cauta</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
             @foreach($reparatii as $reparatie)
                 <div class="row">
                         <div class="box">

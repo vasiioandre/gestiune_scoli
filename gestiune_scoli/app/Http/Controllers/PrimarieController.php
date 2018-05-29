@@ -9,6 +9,7 @@ use App\Organizare_Interna;
 use App\Reparatii;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,6 +40,26 @@ class PrimarieController extends Controller
         $reparatii = Reparatii::where('id_scoala', $id)->get();
 
         return view('reparatii')->with("reparatii", $reparatii);
+    }
+
+    public function cautare_reparatie()
+    {
+        $anul_finalizarii = Input::get('search');
+
+        if($anul_finalizarii != "")
+        {
+            $id = Session::get('selected_school');
+
+//            $reparatii = Reparatii::where('anul_finalizarii', 'LIKE', '%' . $anul_finalizarii . "%")->get();
+            $reparatii = Reparatii::where('id_scoala', $id)->where('anul_finalizarii', $anul_finalizarii)->get();
+
+            if(count($reparatii) > 0)
+                return view('reparatii')->with("reparatii", $reparatii);
+            else
+                return back()->with('success','Nu s-a gasit nici o reparatie in anul cautat.');
+        }
+        else
+            return redirect()->route('reparatii');
     }
 
     public function galerie()
