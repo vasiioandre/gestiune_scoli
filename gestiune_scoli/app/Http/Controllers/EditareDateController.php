@@ -61,26 +61,8 @@ class EditareDateController extends Controller
                 ]);
         }
 
-
-//        switch($request->submitbutton) {
-//            case 'save':
-
-
-
         return back()
             ->with('success','Ati modificat scoala cu succes.');
-
-//                break;
-//
-//            case 'edit_photos':
-//                //action for save-draft here
-//                break;
-//
-//            case 'delete':
-//                //action for save-draft here
-//                break;
-//        }
-
     }
 
     public function stergere_scoala()
@@ -89,6 +71,40 @@ class EditareDateController extends Controller
         DB::table('scoli')->where('id_scoala', '=', $id)->delete();
 
         return redirect()->route('home') ->with('success','Scoala a fost stearsa din baza de date.');
+    }
+
+
+    public function editare_reparatii()
+    {
+        $id = Session::get('selected_school');
+        $reparatii = DB::table("reparatii")->where('id_scoala', $id)->get();
+        return view('editare_date.editare_reparatii',compact('reparatii'));
+    }
+
+    public function editare_reparatie()
+    {
+        $id = Request::get('id_reparatie');
+
+        DB::table('reparatii')
+            ->where('id_reparatie', $id)
+            ->update([
+                'anul_finalizarii' => Request::get('an'),
+                'detalii' => Request::get('detalii'),
+                'suma_investita'=> Request::get('suma'),
+                'firma' => Request::get('firma'),
+                'updated_at' => Carbon::now()
+            ]);
+
+        return back()
+            ->with('success','Ati modificat reparatia cu succes.');
+    }
+
+    public function stergere_reparatie($id)
+    {
+        DB::table("reparatii")->where('id_reparatie', $id)->delete();
+
+        return back()
+            ->with('success','Reparatia a fost stearsa.');
     }
 
 

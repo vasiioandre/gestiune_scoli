@@ -36,8 +36,11 @@
                 <form method="POST" action="{{ url('cautare_reparatie') }}">
                     {{ csrf_field() }}
                     <div class="row">
-                        <div class="col-md-3 col-md-offset-1">
-                            <input type="text" name="search" class="form-control" placeholder="Cauta reparatii dupa anul finalizarii" value="{{ old('search') }}">
+                        <div class="col-md-4 col-md-offset-2" align="right">
+                            <p>Introduceti anul finalizarii reparatiei:</p>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="text" name="search" class="form-control" value="{{ old('search') }}">
                         </div>
                         <div class="col-md-2">
                             <button class="btn btn-primary">Cauta</button>

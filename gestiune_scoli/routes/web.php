@@ -68,10 +68,12 @@ Route::get('editare_scoala', 'EditareDateController@editare_scoala');
 Route::post('editare_scoala', ['as'=>'editare_scoala.post','uses'=> 'EditareDateController@editare_scoala_post']);
 Route::post('stergere_scoala', 'EditareDateController@stergere_scoala');
 
+Route::get('editare_reparatii', 'EditareDateController@editare_reparatii');
+Route::post('editare_reparatie', 'EditareDateController@editare_reparatie')->name('editare_reparatie');
+Route::delete('stergere_reparatie/{id}', ['as'=>'stergere_reparatie','uses'=> 'EditareDateController@stergere_reparatie']);
+
 Route::get('editare_utilizatori', 'EditareDateController@utilizatori');
 Route::delete('stergere_utilizator/{id}', ['as'=>'stergere_utilizator','uses'=> 'EditareDateController@stergere_utilizator']);
-//Route::delete('stergere_utilizatori/{id}', 'EditareDateController@stergere_utilizator');
-//Route::delete('stergere_utilizatori_selectati', 'EditareDateController@stergere_utilizatori_selectati');
 
 
 Route::get('test', 'PrimarieController@test');

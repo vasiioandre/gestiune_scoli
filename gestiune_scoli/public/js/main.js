@@ -123,4 +123,23 @@
 
         }
 
+         $(function() {
+            $('#ModificaReparatie').on("show.bs.modal", function (event) {
+                var button = $(event.relatedTarget);
+                var id_reparatie = button.data('id_reparatie');
+                var an = button.data('an');
+                var detalii = button.data('detalii');
+                var suma = button.data('suma');
+                var firma = button.data('firma');
+                console.log(id_reparatie);
+
+                var modal = $(this);
+                modal.find('#id_reparatie').val(id_reparatie);
+                modal.find('#an').val(an);
+                modal.find('#detalii').val(detalii);
+                modal.find('#suma').val(suma);
+                modal.find('#firma').val(firma);
+            });
+         });
+
 })(jQuery);

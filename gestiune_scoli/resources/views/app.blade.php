@@ -16,9 +16,6 @@
     <link href="{{ url('skin/default.css') }}" rel="stylesheet">
     <link href="{{ url('js/fancybox/jquery.fancybox.css') }}" rel="stylesheet">
 
-    <link href="{{ url('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
-    {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet">--}}
-
     <link href="{{ url('css/styleSideBar.css') }}" rel="stylesheet">
 
 </head>
@@ -101,7 +98,7 @@
                             <ul class="collapse list-unstyled" id="pageSubmenu2">
                                 <li><a href="{{ url('editare_scoala') }}">Scoala</a></li>
                                 <li><a href="#">Cladiri arondate</a></li>
-                                <li><a href="#">Reparatii</a></li>
+                                <li><a href="{{ url('editare_reparatii') }}">Reparatii</a></li>
                                 <li><a href="#">Investitii</a></li>
                                 <li><a href="#">Avarii</a></li>
                                 <li><a href="#">Utilitati</a></li>
@@ -233,8 +230,6 @@
     <script src="{{ url('js/stellar.js') }}"></script>
     <script src="{{ url('js/jquery.appear.js') }}"></script>
     <script src="{{ url('js/main.js') }}"></script>
-    <script src="{{ url('js/bootstrap-datetimepicker.min.js') }}"></script>
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>--}}
 
 
 </body>
