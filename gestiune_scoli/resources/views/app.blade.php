@@ -145,7 +145,7 @@
             </div>
 
             @else
-                @if (Request::is('login') or Request::is('register'))
+                @if (Request::is('login'))
                     @else
                 <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:50px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
 
@@ -155,7 +155,7 @@
                                 <span class="fa fa-bars color-white"></span>
                             </button>
                             <a class="navbar-brand" href="{{ url('home') }}" data-0="line-height:90px;" data-300="line-height:50px;">
-                                <img class="img-fluid" src="{{ URL::to('img/stema_pmt.jpg') }}">-->
+                                <img class="img-fluid" src="{{ URL::to('img/stema_pmt.jpg') }}">
                             </a>
                         </div>
                         <div class="navbar-collapse collapse">
@@ -183,7 +183,7 @@
 
 
     @section('login_menu')
-        @if (Request::is('login') or Request::is('register') or Request::is('home'))
+        @if (Request::is('login') or Request::is('home'))
         <section id="header" class="appear"></section>
         <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:50px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
 
@@ -193,7 +193,8 @@
                         <span class="fa fa-bars color-white"></span>
                     </button>
                     <a class="navbar-brand" href="{{ url('home') }}" data-0="line-height:90px;" data-300="line-height:50px;">
-                        <img class="img-fluid" src="{{ URL::to('img/stema_pmt.jpg') }}">-->
+                        <img class="img-fluid" src="{{ URL::to('img/stema_pmt.jpg') }}">
+                        {{--<img class="img-fluid" src="{{ URL::to('img/pmt-min.png') }}"  width="110px">--}}
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">
@@ -204,7 +205,6 @@
                     @else
                         <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
                             <li {{{ (Request::is('login') ? 'class=active' : "") }}}><a href="{{ url('login') }}">Login</a></li>
-                            <li {{{ (Request::is('register') ? 'class=active' : "") }}}><a href="{{ url('register') }}">Register</a></li>
                         </ul>
                     @endif
                 </div>

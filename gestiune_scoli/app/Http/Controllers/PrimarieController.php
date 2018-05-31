@@ -53,7 +53,7 @@ class PrimarieController extends Controller
             $id = Session::get('selected_school');
 
 //            $reparatii = Reparatii::where('anul_finalizarii', 'LIKE', '%' . $anul_finalizarii . "%")->get();
-            $reparatii = Reparatii::where('id_scoala', $id)->where('anul_finalizarii', $anul_finalizarii)->orderBy('anul_finalizarii', 'desc')->get();
+            $reparatii = Reparatii::where('id_scoala', $id)->where('anul_finalizarii', $anul_finalizarii)->orderBy('anul_finalizarii', 'desc')->simplePaginate(2);
 
             if(count($reparatii) > 0)
                 return view('reparatii')->with("reparatii", $reparatii);

@@ -345,6 +345,11 @@ section.section-login{
 	font-weight: 700;
 }
 
+.section-header h1{
+	text-align: center;
+	padding-bottom: 30px;
+}
+
 /*===========================
   --- Header & menu ----
 =========================== */

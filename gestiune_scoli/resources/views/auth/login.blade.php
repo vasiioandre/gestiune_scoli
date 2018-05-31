@@ -18,7 +18,7 @@
                                 @csrf
 
                                 <div class="form-group row">
-                                    <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+                                    <label for="email" class="col-sm-4 col-form-label text-md-right" >{{ __('E-Mail') }}</label>
 
                                     <div class="col-md-6">
                                         <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
@@ -46,7 +46,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <div class="col-md-6 offset-md-4">
+                                    <div class="col-md-6 col-md-offset-4">
                                         <div class="checkbox">
                                             <label>
                                                 <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Tine-ma minte') }}
@@ -55,15 +55,11 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row mb-0">
-                                    <div class="col-md-8 offset-md-4">
+                                <div class="form-group row">
+                                    <div class="col-md-3 col-md-offset-5">
                                         <button type="submit" class="btn btn-primary">
                                             {{ __('Login') }}
                                         </button>
-
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Ti-ai uitat parola?') }}
-                                        </a>
                                     </div>
                                 </div>
                             </form>

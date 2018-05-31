@@ -47,7 +47,7 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Anulare</button>
-                            <input type="submit" class="btn btn-primary" value="Salveaza"></input>
+                            <input type="submit" class="btn btn-primary" value="Salveaza">
                             {{--{!! Form::submit('Salveaza', ['class' => 'btn btn-primary', ]) !!}--}}
                         </div>
                 </div>

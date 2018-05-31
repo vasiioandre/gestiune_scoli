@@ -36,14 +36,6 @@
                     @csrf
 
                     <div class="form-group row">
-                        <label for="id_scoala" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Scoala') }}</label>
-
-                        <div class="col-md-5">
-                            {!! Form::select('selected_school', $school_names, null, [ 'class' =>  'form-control']) !!}
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
                         <label for="year" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('Anul finalizarii') }}</label>
 
                         <div class="col-md-5">

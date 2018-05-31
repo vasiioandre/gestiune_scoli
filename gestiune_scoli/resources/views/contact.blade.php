@@ -7,7 +7,6 @@
             <div class="container">
                 <div class="section-header">
                     <h1>Contact </h1>
-                    <p>{{ $school->nume }}</p>
                 </div>
 
                 <div class="row contact-info">

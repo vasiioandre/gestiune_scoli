@@ -99,19 +99,13 @@ class AdaugareDateController extends Controller
 
     public function adaugare_reparatie()
     {
-        $school_names = Scoala::all('nume', 'id_scoala');
-        $school_name_selected = array();
-        foreach ($school_names as $school_name) {
-            $school_name_selected[$school_name->id_scoala] = $school_name->nume;
-        }
-
-        return view('adaugare_date.adaugare_reparatie')->with("school_names", $school_name_selected);
+        return view('adaugare_date.adaugare_reparatie');
     }
 
     public function adaugare_reparatie_post(Request $request)
     {
         $product = Reparatii::create([
-            'id_scoala' => $request->input('selected_school'),
+            'id_scoala' => Session::get('selected_school'),
             'anul_finalizarii' => $request->input('year'),
             'detalii' => $request->input('details'),
             'suma_investita' => $request->input('amount'),
@@ -170,7 +164,7 @@ class AdaugareDateController extends Controller
             $receptionName = NULL;
 
         Investitii::create([
-            'id_scoala' =>  $request->input('selected_school'),
+            'id_scoala' =>  Session::get('selected_school'),
             'anul_finalizarii' => $request->input('year'),
             'detalii' =>  $request->input('details'),
             'suma_investita' =>  $request->input('amount'),
