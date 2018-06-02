@@ -783,7 +783,7 @@ nav#filter a {
 	padding:0 10px;
 }
 #contact-form input[type=text]:focus,#contact-form input[type=email]:focus, .contactForm textarea:focus {
-	background: #4e8178;
+	background: #558C89;
 	color: #eff1ef;
 	box-shadow: none;
 	-moz-box-shadow: none;
@@ -1391,9 +1391,9 @@ h1{
 
 /*Success Message*/
 .alert-success {
-	color: #4e8178;
+	color: #558C89;
 	background-color: #dff0d8;
-	border-color: #4e8178;
+	border-color: #558C89;
 }
 
 /* Galerie */
