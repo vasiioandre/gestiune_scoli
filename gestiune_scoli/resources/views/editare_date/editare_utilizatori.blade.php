@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('content')
-
     <section id="editare_utilizatori" class="section appear clearfix">
         <div class="container">
             <div class="row mar-bot40">
@@ -34,7 +33,7 @@
                 <tr>
                     <th>Nume</th>
                     <th>Email</th>
-                    <th>Id Scoala</th>
+                    <th>Drepturi</th>
                     <th width="100px">Actiune</th>
                 </tr>
                 @if($utilizatori->count())
@@ -43,10 +42,9 @@
                             <tr id="tr_{{$utilizator->id}}">
                                 <td>{{ $utilizator->name }}</td>
                                 <td>{{ $utilizator->email }}</td>
-                                <td>{{ $utilizator->id_scoala }}</td>
+                                <td>{{ $utilizator->description }}</td>
                                 <td>
                                     <div class='btn-group'>
-    {{--                                    <a href="{!! route('home', [$utilizator->id]) !!}" class='btn btn-default btn-xs'>Modifica</a>--}}
                                         {!! Form::button('Sterge', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Sunteti sigur ca doriti sa stergeti utilizatorul?')"]) !!}
                                     </div>
                                 </td>
@@ -57,7 +55,6 @@
             </table>
         </div>
     </section>
-
 @stop
 
 @section('login_menu')
