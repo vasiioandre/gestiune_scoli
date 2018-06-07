@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('content')
-
     <section id="adaugare_cladire" class="section appear clearfix">
         <div class="container">
 
@@ -71,7 +70,8 @@
                         <label for="email" class="col-sm-2 col-form-label col-md-offset-2 text-md-right">{{ __('E-Mail') }}</label>
 
                         <div class="col-md-5">
-                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
+                                   value="{{ old('email') }}" required>
 
                             @if ($errors->has('email'))
                                 <span class="invalid-feedback">

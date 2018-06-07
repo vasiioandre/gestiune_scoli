@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('content')
-
     @foreach($scoala as $school)
     <div id="about">
         <div class="container">
@@ -14,17 +13,14 @@
             </div>
         </div>
 
-        <!--about wrapper left-->
         <div class="container">
-
             <div class="row">
                 <div class="col-xs-12 hidden-sm col-md-5">
                     <div class="about-left">
-                        <img src="{{ URL::to('img/' . $school->fotografie) }}" alt="">
+                        <img src="{{ URL::to('img/' . $school->fotografie) }}">
                     </div>
                 </div>
 
-                <!--about wrapper right-->
                 <div class="col-xs-12 col-md-7">
                     <div class="about-right">
                             <div class="about-right-wrapper">
@@ -33,13 +29,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
     @endforeach
-
-
 @stop
 
 

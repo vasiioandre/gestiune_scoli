@@ -15,7 +15,7 @@ class HomeController extends Controller
     {
         if (Auth::check())
         {
-            if($request->user()->hasRole(['admin', 'primarie']))
+            if($request->user()->hasAnyRole(['admin', 'primarie']))
             {
                 $school_names = DB::table('scoli')->select('nume', 'id_scoala')->orderBy('nume')->get();
                 $school_name_selected = array();
@@ -23,7 +23,8 @@ class HomeController extends Controller
                     $school_name_selected[$school_name->id_scoala] = $school_name->nume;
                 }
 
-                $coordonate = DB::table('scoli')->select('nume', 'latitudine', 'longitudine')->whereNotNull('latitudine')->whereNotNull('longitudine')->get();
+                $coordonate = DB::table('scoli')->select('nume', 'latitudine', 'longitudine')->whereNotNull('latitudine')
+                    ->whereNotNull('longitudine')->get();
 
                 return view('home')->with("school_names", $school_name_selected)->with("coordinates", $coordonate);
             }
@@ -49,7 +50,8 @@ class HomeController extends Controller
                 $school_name_selected[$school_name->id_scoala] = $school_name->nume;
             }
 
-            $coordonate = DB::table('scoli')->select('nume', 'latitudine', 'longitudine')->whereNotNull('latitudine')->whereNotNull('longitudine')->get();
+            $coordonate = DB::table('scoli')->select('nume', 'latitudine', 'longitudine')->whereNotNull('latitudine')
+                ->whereNotNull('longitudine')->get();
 
             return view('home')->with("school_names", $school_name_selected)->with("coordinates", $coordonate);
         }

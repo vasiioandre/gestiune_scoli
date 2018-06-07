@@ -108,8 +108,10 @@ class EditareDateController extends Controller
     }
 
 
-    public function utilizatori()
+    public function utilizatori(Request $request)
     {
+        $request->user()->authorizeRoles(['admin']);
+
         $utilizatori = DB::table("users")->get();
         return view('editare_date.editare_utilizatori',compact('utilizatori'));
     }

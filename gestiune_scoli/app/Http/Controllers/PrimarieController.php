@@ -23,12 +23,7 @@ class PrimarieController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
-    {
-        return "Index Page";
-    }
-
-    public function cladiri_arondate(Request $request)
+    public function cladiri_arondate()
     {
         $id = Session::get('selected_school');
         $cladiri = Cladiri_Arondate::where('id_scoala', $id)->get();
