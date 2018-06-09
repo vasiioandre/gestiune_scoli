@@ -34,6 +34,5 @@
     @endforeach
 @stop
 
-
 @section('login_menu')
 @endsection

@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('content')
-
     <section id="services">
         <div class="container">
             <div class="container page-title">
@@ -23,7 +22,7 @@
 
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
-                    <strong>Atentie!</strong> Nu s-au putut salva datele in baza de date.
+                    <strong>Atentie!</strong> Operatia nu s-a putut realiza cu succes.
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -111,18 +110,15 @@
                             </div>
                         </div>
                     </div>
-
             @endforeach
+        </div>
 
-            </div>
         <div class="row">
             <div class="col-lg-4 col-lg-offset-5">
                 {{ $reparatii->links() }}
             </div>
         </div>
-
     </section>
-
 @stop
 
 

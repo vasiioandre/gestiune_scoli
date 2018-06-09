@@ -401,6 +401,8 @@ section.section-login{
 
 .navbar .navbar-nav > .active > a {
 	color: #fff;
+	background: #70b9b0;
+
 }
 .navbar .navbar-nav > .active > a {
 	padding-bottom: 22px;

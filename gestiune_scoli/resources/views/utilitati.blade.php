@@ -59,6 +59,11 @@
             @endforeach
 
         </div>
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-5">
+                {{ $utilitati->links() }}
+            </div>
+        </div>
     </section>
 
 @stop

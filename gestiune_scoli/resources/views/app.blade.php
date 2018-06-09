@@ -18,7 +18,6 @@
 
     <body>
         @section('user_menu')
-
             @if (Auth::check())
                 <div class="wrapper fill">
                     <nav id="sidebar">
@@ -37,7 +36,8 @@
                                 </a>
                             </li>
 
-                            <li {{{ (Request::is('cladiri_arondate', 'reparatii', 'investitii', 'avarii', 'utilitati') ? 'class=active' : "") }}}>
+                            <li {{{ (Request::is('cladiri_arondate', 'reparatii', 'investitii', 'avarii', 'utilitati') ?
+                            'class=active' : "") }}}>
                                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
                                     <i class="fa fa-1x fa-folder"></i>
                                     Informatii patrimoniale
@@ -178,8 +178,8 @@
         @section('login_menu')
             @if (Request::is('login') or Request::is('home'))
             <section id="header" class="appear"></section>
-            <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:50px; height:100px; background-color:rgba(0,0,0,0.3);"
-                 data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+            <div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:50px; height:100px;
+             background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
 
                 <div class="container">
                     <div class="navbar-header">
@@ -197,7 +197,7 @@
                             </ul>
                         @else
                             <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
-                                <li {{{ (Request::is('login') ? 'class=active' : "") }}}><a href="{{ url('login') }}">Login</a></li>
+                                <li><a href="{{ url('login') }}">Login</a></li>
                             </ul>
                         @endif
                     </div>

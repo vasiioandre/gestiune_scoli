@@ -24,6 +24,7 @@ Route::get('utilitati', 'PrimarieController@utilitati')->name('utilitati');
 Route::get('organizare_interna', 'PrimarieController@organizare_interna');
 
 Route::post('cautare_reparatie', 'PrimarieController@cautare_reparatie')->name('cautare_reparatie');
+Route::post('cautare_investitie', 'PrimarieController@cautare_investitie')->name('cautare_investitie');
 
 Route::get('galerie', 'PrimarieController@galerie');
 Route::post('galerie', 'PrimarieController@galerie_post')->name('galerie.post');
